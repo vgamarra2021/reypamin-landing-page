@@ -1,0 +1,59 @@
+---
+import Header from "src/common/Header.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import bgContactHeader from "@images/bg-contact-header.webp";
+import bgContact from "@images/bg-contact.webp";
+import image1 from "@images/contact-img-1.webp";
+---
+
+<BaseLayout title="Contacto | Reypamin">
+    <Header />
+    <div class="w-full h-[450px] relative">
+        <div
+            class="absolute pt-[110px] inset-0 flex items-center justify-center bg-black bg-opacity-70"
+        >
+            <h1 class="text-white text-4xl font-extrabold">Contacto</h1>
+        </div>
+        <img
+            src={bgContactHeader.src}
+            alt="Contáctanos"
+            class="w-full h-full object-cover"
+        />
+
+        <div class="w-full flex mx-auto relative h-fit">
+            <div
+                class="flex container items-center flex-col inset-0 mx-auto relative z-10 py-14"
+            >
+                <h2 class="text-3xl italic font-bold text-primary-blue">
+                    ¡Hablemos de tu Próximo Proyecto!
+                </h2>
+                <p class="text-xl italic">Queremos ser parte de tu éxito</p>
+                <div class="flex w-full">
+                    <div class="w-1/2"></div>
+                    <div class="w-1/2">
+                        <div class="relative items-center justify-center w-fit mx-auto">
+                            <div
+                                class="overflow-hidden rounded-md h-[600px] aspect-[4/6] relative border-white border-8 z-10"
+                            >
+                                <img
+                                    class="size-full"
+                                    src={image1.src}
+                                    alt="Contact Image 1"
+                                />
+                            </div>
+                            <div
+                                class="rounded-md bg-primary-blue h-[600px] relative aspect-[4/6] z-0 -mt-[580px] ms-[20px]"
+                            >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img
+                src={bgContact.src}
+                alt="Contáctanos"
+                class="w-full h-full object-cover absolute"
+            />
+        </div>
+    </div>
+</BaseLayout>

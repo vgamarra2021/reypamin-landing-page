@@ -1,0 +1,21 @@
+---
+import logo from "@images/logo.svg";
+import PrimaryButton from "./PrimaryButton.astro";
+---
+
+<header class="flex w-full absolute z-50 py-5">
+    <div class="flex items-center container mx-auto justify-between">
+        <img src={logo.src} alt="Reypamin Logo" class="h-[70px]"/>
+        <div class="flex text-white">
+            <ul class="flex gap-10">
+                <li class="flex items-center font-semibold"><a href="/">Inicio</a></li>
+                <li class="flex items-center font-semibold"><a href="/soluciones">Soluciones</a></li>
+                <li class="flex items-center font-semibold"><a href="/productos">Productos</a></li>
+                <li class="flex items-center font-semibold"><a href="/contacto">Contacto</a></li>
+                <li class="flex items-center">
+                    <PrimaryButton title="¡HABLEMOS YA!"></PrimaryButton>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
