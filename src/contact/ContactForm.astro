@@ -1,0 +1,14 @@
+---
+import PrimaryButton from "src/common/PrimaryButton.astro";
+import Input from "./Input.astro";
+import TextArea from "./TextArea.astro";
+---
+
+
+<form class="flex flex-col gap-4 w-full max-w-screen-sm self-end">
+    <Input id="name" inputName="name" label="Nombres"></Input>
+    <Input id="email" inputName="email" label="Correo"></Input>
+    <Input id="phone" inputName="phone" label="Teléfono"></Input>
+    <TextArea id="message" inputName="message" label="Mensaje"></TextArea>
+    <PrimaryButton title="ENVIAR"></PrimaryButton>
+</form>

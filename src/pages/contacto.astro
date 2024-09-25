@@ -4,51 +4,219 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import bgContactHeader from "@images/bg-contact-header.webp";
 import bgContact from "@images/bg-contact.webp";
 import image1 from "@images/contact-img-1.webp";
+import ContactForm from "src/contact/ContactForm.astro";
+import ContactItem from "src/contact/ContactItem.astro";
+import SocialNetwork from "src/contact/SocialNetwork.astro";
 ---
 
 <BaseLayout title="Contacto | Reypamin">
     <Header />
-    <div class="w-full h-[450px] relative">
-        <div
-            class="absolute pt-[110px] inset-0 flex items-center justify-center bg-black bg-opacity-70"
-        >
-            <h1 class="text-white text-4xl font-extrabold">Contacto</h1>
-        </div>
-        <img
-            src={bgContactHeader.src}
-            alt="Contáctanos"
-            class="w-full h-full object-cover"
-        />
-
-        <div class="w-full flex mx-auto relative h-fit">
+    <div class="w-full ">
+        <div class="flex relative h-[450px]">
+            <img
+                src={bgContactHeader.src}
+                alt="Contáctanos"
+                class="w-full h-full object-cover"
+            />
             <div
-                class="flex container items-center flex-col inset-0 mx-auto relative z-10 py-14"
+                class="absolute pt-[110px] h-full inset-0 flex items-center justify-center bg-black bg-opacity-70 z-30"
             >
-                <h2 class="text-3xl italic font-bold text-primary-blue">
+                <h1 class="text-white text-4xl font-extrabold">Contacto</h1>
+            </div>
+        </div>
+
+        <div class="w-full flex flex-col mx-auto relative h-fit gap-14">
+            <section
+                class="flex container items-center flex-col inset-0 mx-auto relative z-10 pt-14"
+            >
+                <h2 class="text-3xl italic font-black text-primary-blue">
                     ¡Hablemos de tu Próximo Proyecto!
                 </h2>
                 <p class="text-xl italic">Queremos ser parte de tu éxito</p>
-                <div class="flex w-full">
-                    <div class="w-1/2"></div>
-                    <div class="w-1/2">
-                        <div class="relative items-center justify-center w-fit mx-auto">
-                            <div
-                                class="overflow-hidden rounded-md h-[600px] aspect-[4/6] relative border-white border-8 z-10"
-                            >
-                                <img
-                                    class="size-full"
-                                    src={image1.src}
-                                    alt="Contact Image 1"
-                                />
-                            </div>
-                            <div
-                                class="rounded-md bg-primary-blue h-[600px] relative aspect-[4/6] z-0 -mt-[580px] ms-[20px]"
-                            >
-                            </div>
+            </section>
+            <section
+                class="flex container mx-auto w-full z-10 gap-10 items-center justify-center"
+            >
+                <div class="flex flex-col gap-6">
+                    <h2
+                        class="text-2xl italic font-black text-primary-blue max-w-screen-sm self-end"
+                    >
+                        Completa el formulario y nuestros especialistas se
+                        pondrán en contacto contigo
+                    </h2>
+                    <ContactForm />
+                </div>
+                <div>
+                    <div
+                        class="relative items-center justify-center w-fit mx-auto"
+                    >
+                        <div
+                            class="overflow-hidden rounded-md h-[600px] aspect-[4/6] relative border-white border-8 z-10"
+                        >
+                            <img
+                                class="size-full"
+                                src={image1.src}
+                                alt="Contact Image 1"
+                            />
+                        </div>
+                        <div
+                            class="rounded-md bg-primary-blue h-[600px] relative aspect-[4/6] z-0 -mt-[580px] ms-[20px]"
+                        >
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
+            <section
+                class="flex container items-center flex-col inset-0 mx-auto relative z-10 gap-6"
+            >
+                <h2 class="text-3xl italic font-black text-primary-blue">
+                    Estamos Aquí para Atenderte
+                </h2>
+                <div class="flex gap-4 container justify-center">
+                    <ContactItem
+                        title="Llámanos"
+                        items={["+51 922 297 479", "+51 968 028 591"]}
+                    >
+                        <svg
+                            class="size-20"
+                            viewBox="0 0 90 90"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M56.25 26.25C58.2391 26.25 60.1468 27.0402 61.5533 28.4467C62.9598 29.8532 63.75 31.7609 63.75 33.75M56.25 11.25C62.2174 11.25 67.9403 13.6205 72.1599 17.8401C76.3795 22.0597 78.75 27.7826 78.75 33.75M18.75 15H33.75L41.25 33.75L31.875 39.375C35.8911 47.5182 42.4818 54.1089 50.625 58.125L56.25 48.75L75 56.25V71.25C75 73.2391 74.2098 75.1468 72.8033 76.5533C71.3968 77.9598 69.4891 78.75 67.5 78.75C52.8722 77.8611 39.0756 71.6494 28.7131 61.2869C18.3506 50.9244 12.1389 37.1278 11.25 22.5C11.25 20.5109 12.0402 18.6032 13.4467 17.1967C14.8532 15.7902 16.7609 15 18.75 15Z"
+                                stroke="white"
+                                stroke-width="5.33333"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </svg>
+                    </ContactItem>
+                    <ContactItem
+                        title="Escríbenos"
+                        items={[
+                            "ventas@reypamin.pe",
+                            "administracion@reypamin.pe",
+                        ]}
+                    >
+                        <svg
+                            class="size-20"
+                            viewBox="0 0 90 90"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M11.25 26.25C11.25 24.2609 12.0402 22.3532 13.4467 20.9467C14.8532 19.5402 16.7609 18.75 18.75 18.75H71.25C73.2391 18.75 75.1468 19.5402 76.5533 20.9467C77.9598 22.3532 78.75 24.2609 78.75 26.25V63.75C78.75 65.7391 77.9598 67.6468 76.5533 69.0533C75.1468 70.4598 73.2391 71.25 71.25 71.25H18.75C16.7609 71.25 14.8532 70.4598 13.4467 69.0533C12.0402 67.6468 11.25 65.7391 11.25 63.75V26.25Z"
+                                stroke="white"
+                                stroke-width="5.33333"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                            <path
+                                d="M11.25 26.25L45 48.75L78.75 26.25"
+                                stroke="white"
+                                stroke-width="5.33333"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+                        </svg>
+                    </ContactItem>
+                    <ContactItem
+                        title="Ubícanos"
+                        items={[
+                            "Mz A Lote. 1 Av. Alameda de Copacabana 1ra Etapa Lima - Lima - Puente Piedra",
+                        ]}
+                    >
+                        <svg
+                            class="size-20"
+                            viewBox="0 0 90 90"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <g clip-path="url(#clip0_25_2087)">
+                                <path
+                                    d="M45 69.375L33.75 63.75L11.25 75V26.25L33.75 15L56.25 26.25L78.75 15V43.125"
+                                    stroke="#EEF2F4"
+                                    stroke-width="5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                                <path
+                                    d="M33.75 15V63.75"
+                                    stroke="#EEF2F4"
+                                    stroke-width="5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                                <path
+                                    d="M56.25 26.25V46.875"
+                                    stroke="#EEF2F4"
+                                    stroke-width="5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                                <path
+                                    d="M79.2038 75.4537C80.7774 73.8805 81.8492 71.876 82.2836 69.6936C82.7179 67.5112 82.4954 65.249 81.644 63.1932C80.7926 61.1373 79.3506 59.3801 77.5005 58.1438C75.6504 56.9074 73.4752 56.2476 71.25 56.2476C69.0248 56.2476 66.8496 56.9074 64.9995 58.1438C63.1494 59.3801 61.7074 61.1373 60.856 63.1932C60.0047 65.249 59.7821 67.5112 60.2164 69.6936C60.6508 71.876 61.7226 73.8805 63.2963 75.4537C64.8638 77.025 67.515 79.3725 71.25 82.5C75.1913 79.1625 77.8463 76.815 79.2038 75.4537Z"
+                                    stroke="#EEF2F4"
+                                    stroke-width="5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                                <path
+                                    d="M71.25 67.5V67.5375"
+                                    stroke="#EEF2F4"
+                                    stroke-width="5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_25_2087">
+                                    <rect width="90" height="90" fill="white"
+                                    ></rect>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </ContactItem>
+                </div>
+            </section>
+            <section
+                class="flex flex-col gap-6 items-center container mx-auto w-full z-10 justify-center pb-14"
+            >
+                <h2 class="text-3xl italic font-black text-primary-blue">
+                    Síguenos En:
+                </h2>
+                <div class="flex gap-10">
+                    <SocialNetwork href="https://www.facebook.com/reypamin">
+                        <svg
+                            class="h-12"
+                            viewBox="0 0 60 58"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M55.5018 13.3353C46.5406 -0.00545625 28.1895 -3.95828 13.9974 4.31794C0.148272 12.5942 -4.31088 30.6289 4.6503 43.9285L5.3792 44.9991L2.37785 55.787L13.6115 52.9047L14.7263 53.6047C19.5713 56.1164 24.8451 57.5575 30.076 57.5575C35.6929 57.5575 41.3097 56.1164 46.1547 53.2341C60.0038 44.5873 64.1199 26.9231 55.5018 13.253V13.3353ZM47.6554 41.0874C46.1547 43.2285 44.2681 44.6696 41.6527 45.0402C40.152 45.0402 38.2654 45.7402 30.8049 42.8991C24.4592 40.0168 19.1854 35.3229 15.4552 29.9289C13.2256 27.4172 12.0679 24.1644 11.7249 20.9116C11.7249 18.0293 12.8397 15.5176 14.7263 13.7059C15.4552 13.0059 16.2269 12.6353 16.9558 12.6353H18.8424C19.5713 12.6353 20.3431 12.6353 20.729 14.0765C21.4579 15.8882 23.3444 20.2116 23.3444 20.5821C23.7303 20.9527 23.5588 23.7115 21.8438 25.2761C20.9005 26.3055 20.729 26.3467 21.1149 27.0878C22.6155 29.2289 24.5021 31.4112 26.3458 33.2229C28.5754 35.0346 30.8478 36.4758 33.4633 37.5463C34.1922 37.9169 34.964 37.9169 35.3498 37.1758C35.7357 36.4758 37.5794 34.6641 38.3512 33.9229C39.0801 33.2229 39.466 33.2229 40.2378 33.5523L46.2405 36.4346C46.9694 36.8052 47.7411 37.1346 48.127 37.5052C48.5129 38.5757 48.5129 40.0168 47.7411 41.0874H47.6554Z"
+                                fill="#2C2D43"></path>
+                        </svg>
+                    </SocialNetwork>
+                    <SocialNetwork href="https://www.facebook.com/reypamin">
+                        <svg
+                            class="h-12"
+                            viewBox="0 0 61 58"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M30.2856 0C13.7856 0 0.285645 12.9736 0.285645 28.9521C0.285645 43.3993 11.2656 55.3904 25.6056 57.5575V37.3315H17.9856V28.9521H25.6056V22.5665C25.6056 15.314 30.0756 11.3266 36.9456 11.3266C40.2156 11.3266 43.6356 11.8756 43.6356 11.8756V19.0125H39.8556C36.1356 19.0125 34.9656 21.2373 34.9656 23.52V28.9521H43.3056L41.9556 37.3315H34.9656V57.5575C42.0349 56.4822 48.4722 53.0081 53.1154 47.7625C57.7585 42.5168 60.3016 35.8453 60.2856 28.9521C60.2856 12.9736 46.7856 0 30.2856 0Z"
+                                fill="#2C2D43"></path>
+                        </svg>
+                    </SocialNetwork>
+                    <SocialNetwork href="https://www.facebook.com/reypamin">
+                        <svg
+                            class="h-12"
+                            viewBox="0 0 61 58"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M30.5632 19.1817C25.0546 19.1817 20.5592 23.4943 20.5592 28.7787C20.5592 34.0632 25.0546 38.3757 30.5632 38.3757C36.0718 38.3757 40.5673 34.0632 40.5673 28.7787C40.5673 23.4943 36.0718 19.1817 30.5632 19.1817ZM60.5679 28.7787C60.5679 24.8046 60.6055 20.8664 60.3728 16.8995C60.1402 12.2918 59.0444 8.20243 55.5321 4.83304C52.0123 1.45645 47.757 0.412516 42.9539 0.18933C38.8111 -0.0338564 34.7059 0.00214146 30.5707 0.00214146C26.428 0.00214146 22.3228 -0.0338564 18.1876 0.18933C13.3844 0.412516 9.12164 1.46365 5.60933 4.83304C2.08952 8.20963 1.0013 12.2918 0.768649 16.8995C0.535997 20.8736 0.573521 24.8118 0.573521 28.7787C0.573521 32.7457 0.535997 36.691 0.768649 40.658C1.0013 45.2657 2.09702 49.3551 5.60933 52.7244C9.12914 56.101 13.3844 57.145 18.1876 57.3682C22.3303 57.5913 26.4355 57.5553 30.5707 57.5553C34.7135 57.5553 38.8187 57.5913 42.9539 57.3682C47.757 57.145 52.0198 56.0938 55.5321 52.7244C59.0519 49.3479 60.1402 45.2657 60.3728 40.658C60.613 36.691 60.5679 32.7529 60.5679 28.7787ZM30.5632 43.545C22.0451 43.545 15.1706 36.9502 15.1706 28.7787C15.1706 20.6073 22.0451 14.0125 30.5632 14.0125C39.0813 14.0125 45.9558 20.6073 45.9558 28.7787C45.9558 36.9502 39.0813 43.545 30.5632 43.545ZM46.5863 16.8563C44.5975 16.8563 42.9914 15.3156 42.9914 13.4077C42.9914 11.4998 44.5975 9.95912 46.5863 9.95912C48.5751 9.95912 50.1811 11.4998 50.1811 13.4077C50.1817 13.8607 50.0891 14.3094 49.9087 14.7281C49.7282 15.1467 49.4635 15.5271 49.1295 15.8475C48.7956 16.1678 48.3991 16.4218 47.9627 16.5949C47.5262 16.768 47.0585 16.8569 46.5863 16.8563Z"
+                                fill="#2C2D43"></path>
+                        </svg>
+                    </SocialNetwork>
+                </div>
+            </section>
             <img
                 src={bgContact.src}
                 alt="Contáctanos"

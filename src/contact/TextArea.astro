@@ -1,0 +1,13 @@
+---
+interface Props {
+  label:string,
+  id:string,
+  inputName:string
+}
+const {label, id, inputName} = Astro.props
+---
+
+<label for={id} class="w-full flex flex-col gap-2">
+    <p class="text-lg text-primary-blue font-bold">{label}:</p>
+    <textarea class="w-full rounded py-4 px-4 border-2 border-secondary-blue border-opacity-80 focus-visible:border-secondary-blue focus-visible:border-opacity-70" rows="3" name={inputName} id={id}></textarea>
+</label>
