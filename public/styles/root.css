@@ -44,6 +44,33 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth !important;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  /* Ancho de la barra de scroll */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  /* Color de fondo de la pista */
+}
+
+::-webkit-scrollbar-thumb {
+  /* background: #8F99AF; */
+  background: #E51E37;
+  border-radius: 10px;
+  /* Border radius de la barra */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #fc556b;
+  /* Color de la barra cuando se pasa el mouse */
+}
+
+
 @media (prefers-reduced-motion: reduce) {
 
   *,
