@@ -10,8 +10,8 @@ import SocialNetwork from "src/contact/SocialNetwork.astro";
 ---
 
 <BaseLayout title="Contacto | Reypamin">
-    <Header />
-    <div class="w-full ">
+    <Header currentPage="contacto" />
+    <div class="w-full">
         <div class="flex relative h-[450px]">
             <img
                 src={bgContactHeader.src}
@@ -225,3 +225,26 @@ import SocialNetwork from "src/contact/SocialNetwork.astro";
         </div>
     </div>
 </BaseLayout>
+<script>
+    function addAnimation(selector: string) {
+        document.addEventListener("DOMContentLoaded", function () {
+            const elements = document.querySelectorAll(selector);
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add(
+                            "animate__animated",
+                            "animate__fadeInUp",
+                        );
+                        observer.unobserve(entry.target); // Si solo quieres que la animación ocurra una vez, descomenta esta línea
+                    }
+                });
+            });
+
+            elements.forEach((el) => observer.observe(el));
+        });
+    }
+    addAnimation('section')
+    addAnimation('h1')
+</script>

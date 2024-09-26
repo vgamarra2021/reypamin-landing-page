@@ -1,21 +1,60 @@
 ---
 import logo from "@images/logo.svg";
 import PrimaryButton from "./PrimaryButton.astro";
+interface Props {
+    currentPage: string;
+}
+const { currentPage } = Astro.props;
 ---
 
 <header class="flex w-full absolute z-50 py-5">
     <div class="flex items-center container mx-auto justify-between">
-        <img src={logo.src} alt="Reypamin Logo" class="h-[70px]"/>
+        <img src={logo.src} alt="Reypamin Logo" class="h-[70px]" />
         <div class="flex text-white">
-            <ul class="flex gap-10">
-                <li class="flex items-center font-semibold"><a href="/">Inicio</a></li>
-                <li class="flex items-center font-semibold"><a href="/soluciones">Soluciones</a></li>
-                <li class="flex items-center font-semibold"><a href="/productos">Productos</a></li>
-                <li class="flex items-center font-semibold"><a href="/contacto">Contacto</a></li>
+            <ul class="flex gap-10 items-center">
+                <li class="flex items-center font-semibold hover-effect-3">
+                    <a href="/">Inicio</a>
+                </li>
+                <li class="flex items-center font-semibold hover-effect-3">
+                    <a href="/soluciones">Soluciones</a>
+                </li>
+                <li class="flex items-center font-semibold hover-effect-3">
+                    <a href="/productos">Productos</a>
+                </li>
+                <li class="flex items-center font-semibold hover-effect-3">
+                    <a href="/contacto">Contacto</a>
+                </li>
                 <li class="flex items-center">
-                    <PrimaryButton title="¡HABLEMOS YA!"></PrimaryButton>
+                    <PrimaryButton title="¡HABLEMOS YA!" />
                 </li>
             </ul>
         </div>
     </div>
+    <style>
+        /* Hover Effect 3 */
+        .hover-effect-3 {
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .hover-effect-3::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%) scale(0);
+            transition: transform 0.3s ease-in-out;
+            height: 3px;
+            width: 100%;
+            @apply bg-primary-red;
+        }
+
+        .hover-effect-3:hover::before {
+            transform: translateX(-50%) scale(1);
+        }
+
+        .active {
+            transform: translateX(-50%) scale(1);
+        }
+    </style>
 </header>
