@@ -1,6 +1,8 @@
 ---
 import logo from "@images/logo.svg";
 import PrimaryButton from "./PrimaryButton.astro";
+import '../../public/styles/animations.css';
+
 interface Props {
     currentPage: string;
 }
@@ -31,28 +33,6 @@ const { currentPage } = Astro.props;
         </div>
     </div>
     <style>
-        /* Hover Effect 3 */
-        .hover-effect-3 {
-            position: relative;
-            padding: 0.5rem 0;
-        }
-
-        .hover-effect-3::before {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%) scale(0);
-            transition: transform 0.3s ease-in-out;
-            height: 3px;
-            width: 100%;
-            @apply bg-primary-red;
-        }
-
-        .hover-effect-3:hover::before {
-            transform: translateX(-50%) scale(1);
-        }
-
         .active {
             transform: translateX(-50%) scale(1);
         }

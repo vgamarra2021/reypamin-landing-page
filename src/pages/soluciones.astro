@@ -1,0 +1,44 @@
+---
+import solutions from "@/data/solutions";
+import SolutionItem from "@/solutions/SolutionItem.astro";
+import image1 from "@images/bg-contact.webp";
+import bgSolutionsHeader from "@images/bg-solutions-header.webp";
+import Header from "src/common/Header.astro";
+import BaseLayout from "src/layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Soluciones | Reypamin">
+  <Header currentPage="productos" />
+  <img
+    class="fixed h-[100vh] w-full object-cover -z-10"
+    src={image1.src}
+    alt="Background Productos"
+  />
+  <div class="w-full relative bg-white bg-opacity-40">
+    <div class="flex relative h-[450px] bg-primary-blue">
+      <img
+        src={bgSolutionsHeader.src}
+        alt="Soluciones"
+        class="w-full h-full object-cover fade-right"
+      />
+      <div
+        class="absolute pt-[110px] h-full inset-0 flex items-center justify-center bg-black bg-opacity-60 z-30 fade-left"
+      >
+        <h1 class="text-white text-4xl font-extrabold">Soluciones</h1>
+      </div>
+    </div>
+    <div class="flex flex-col gap-14">
+      {
+        solutions.map((solution, index) => (
+          <SolutionItem solution={solution} index={index} />
+        ))
+      }
+    </div>
+  </div>
+</BaseLayout>
+<script>
+  import { addAnimation } from "@/functions/animations";
+  addAnimation(".fade-up");
+  addAnimation(".fade-left", "animate__fadeInLeft");
+  addAnimation(".fade-right", "animate__fadeInRight");
+</script>

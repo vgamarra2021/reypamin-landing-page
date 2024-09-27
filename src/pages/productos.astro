@@ -2,23 +2,43 @@
 import Header from "src/common/Header.astro";
 import BaseLayout from "src/layouts/BaseLayout.astro";
 import bgProductsHeader from "@images/bg-products-header.webp";
-
+import ProductItem from "@/products/ProductItem.astro";
+import image1 from "@images/bg-contact.webp";
+import products from "@/data/products";
 ---
 
-<BaseLayout title="Contacto | Reypamin">
-    <Header currentPage="productos" />
-    <div class="w-full">
-        <div class="flex relative h-[450px]">
-            <img
-                src={bgProductsHeader.src}
-                alt="Productos"
-                class="w-full h-full object-cover"
-            />
-            <div
-                class="absolute pt-[110px] h-full inset-0 flex items-center justify-center bg-black bg-opacity-70 z-30"
-            >
-                <h1 class="text-white text-4xl font-extrabold">Productos</h1>
-            </div>
-        </div>
+<BaseLayout title="Productos | Reypamin">
+  <Header currentPage="productos" />
+  <img
+    class="fixed h-[100vh] w-full object-cover -z-10"
+    src={image1.src}
+    alt="Background Productos"
+  />
+  <div class="w-full relative bg-white bg-opacity-40">
+    <div class="flex relative h-[450px] bg-primary-blue">
+      <img
+        src={bgProductsHeader.src}
+        alt="Productos"
+        class="w-full h-full object-cover fade-right"
+      />
+      <div
+        class="absolute pt-[110px] h-full inset-0 flex items-center justify-center bg-black bg-opacity-60 z-30 fade-left"
+      >
+        <h1 class="text-white text-4xl font-extrabold">Productos</h1>
+      </div>
     </div>
+    <div class="flex flex-col gap-14">
+      {
+        products.map((product, index) => (
+          <ProductItem product={product} index={index} />
+        ))
+      }
+    </div>
+  </div>
 </BaseLayout>
+<script>
+  import { addAnimation } from "@/functions/animations";
+  addAnimation(".fade-up");
+  addAnimation(".fade-left", "animate__fadeInLeft");
+  addAnimation(".fade-right", "animate__fadeInRight");
+</script>

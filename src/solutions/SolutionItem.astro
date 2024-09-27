@@ -1,0 +1,120 @@
+---
+import PrimaryButton from "@/common/PrimaryButton.astro";
+import type { ISolution } from "@/model/solution.interface";
+
+interface Props {
+  solution: ISolution;
+  index: number;
+}
+
+const { solution, index } = Astro.props;
+const indexFormatted = index < 9 ? `0${index + 1}` : index + 1;
+---
+
+<div class="relative">
+  <div
+    class:list={[
+      ["flex container mx-auto gap-8 justify-center py-14"],
+      { "flex-row-reverse": solution.position === "right" },
+    ]}
+  >
+    <div class="flex flex-col gap-8 w-full max-w-md fade-up justify-center">
+      <h4 class="text-primary-red font-black text-xl">{indexFormatted}</h4>
+      <h3 class="text-primary-blue font-black text-3xl italic">
+        {solution.title}
+      </h3>
+      <p class="text-primary-blue text-xl font-medium">
+        {solution.description}
+      </p>
+      {
+        solution.features.length != 0 && (
+          <ul class="flex flex-col text-primary-blue gap-3">
+            {solution.features.map((feature) => (
+              <li class="text-xl font-medium flex gap-1 items-start">
+                <svg
+                  class="w-6 flex-shrink-0"
+                  viewBox="0 0 30 26"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_25_3764)">
+                    <path
+                      d="M25 14.2593V19.9056C25 21.3142 24.4999 22.5186 23.4996 23.5189C22.4994 24.5191 21.295 25.0192 19.8864 25.0192H5.11364C3.70502 25.0192 2.50059 24.5191 1.50036 23.5189C0.500118 22.5186 0 21.3142 0 19.9056V5.13286C0 3.72424 0.500118 2.51982 1.50036 1.51958C2.50059 0.519344 3.70502 0.0192261 5.11364 0.0192261H19.8864C20.6321 0.0192261 21.3246 0.16719 21.9638 0.463118C22.1413 0.545978 22.2479 0.682105 22.2834 0.871499C22.3189 1.07273 22.2656 1.24437 22.1236 1.38641L21.2536 2.25644C21.1352 2.37481 20.9991 2.434 20.8452 2.434C20.8097 2.434 20.7564 2.42216 20.6854 2.39849C20.4131 2.32746 20.1468 2.29195 19.8864 2.29195H5.11364C4.33239 2.29195 3.66359 2.57013 3.10724 3.12647C2.5509 3.68282 2.27273 4.35161 2.27273 5.13286V19.9056C2.27273 20.6868 2.5509 21.3556 3.10724 21.912C3.66359 22.4683 4.33239 22.7465 5.11364 22.7465H19.8864C20.6676 22.7465 21.3364 22.4683 21.8928 21.912C22.4491 21.3556 22.7273 20.6868 22.7273 19.9056V15.3956C22.7273 15.2418 22.7805 15.1116 22.8871 15.005L24.0234 13.8687C24.1418 13.7503 24.2779 13.6911 24.4318 13.6911C24.5028 13.6911 24.5739 13.7089 24.6449 13.7444C24.8816 13.8391 25 14.0107 25 14.2593ZM29.1016 5.57675L14.6484 20.0299C14.3643 20.314 14.027 20.456 13.6364 20.456C13.2457 20.456 12.9084 20.314 12.6243 20.0299L4.98935 12.3949C4.70526 12.1108 4.56321 11.7735 4.56321 11.3829C4.56321 10.9922 4.70526 10.6549 4.98935 10.3708L6.94247 8.41766C7.22656 8.13357 7.56392 7.99153 7.95455 7.99153C8.34517 7.99153 8.68253 8.13357 8.96662 8.41766L13.6364 13.0874L25.1243 1.59948C25.4084 1.31539 25.7457 1.17335 26.1364 1.17335C26.527 1.17335 26.8643 1.31539 27.1484 1.59948L29.1016 3.55261C29.3857 3.8367 29.5277 4.17406 29.5277 4.56468C29.5277 4.95531 29.3857 5.29266 29.1016 5.57675Z"
+                      fill="#2C2D43"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_25_3764">
+                      <rect
+                        width="29.5455"
+                        height="25"
+                        fill="white"
+                        transform="translate(0 0.0192261)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+
+                <p class="italic -mt-1">{feature}</p>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+      <PrimaryButton title="¡LO QUIERO!" />
+    </div>
+    <div class="flex flex-col items-center justify-center gap-6">
+      {
+        solution.images.map((imageName) => (
+          <div
+            class:list={[
+              ["relative items-center justify-center w-fit mx-auto"],
+              { "fade-right": solution.position === "left" },
+              { "fade-left": solution.position === "right" },
+            ]}
+          >
+            <div
+              class:list={[
+                [
+                  "overflow-hidden rounded-md w-[400px] relative border-white border-8 z-10",
+                ],
+                { "aspect-[4/6]": solution.images.length === 1 },
+                { "aspect-[6/4]": solution.images.length != 1 },
+              ]}
+            >
+              <img
+                class="size-full"
+                src={`/images/solutions/${imageName}.webp`}
+                alt="Solution Image"
+              />
+            </div>
+            <div
+              class:list={[
+                ["rounded-md bg-primary-blue w-[400px] relative z-0 ms-[15px]"],
+                { "aspect-[4/6]": solution.images.length === 1 },
+                { "aspect-[6/4]": solution.images.length != 1 },
+                { "-mt-[580px]": solution.images.length === 1 },
+                { "-mt-[250px]": solution.images.length != 1 },
+              ]}
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+  {
+    solution.position === "left" ? (
+      <img
+        class="absolute right-0 fade-right"
+        src="/images/left-arrow.svg"
+        alt="Flechas"
+      />
+    ) : (
+      <img
+        class="absolute left-0 fade-left"
+        src="/images/right-arrow.svg"
+        alt="Flechas"
+      />
+    )
+  }
+</div>

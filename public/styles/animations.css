@@ -1,0 +1,130 @@
+/* Hover Effect 1 */
+.hover-effect-1 {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+
+.hover-effect-1:hover {
+    transform: translateY(-10px);
+    transition: transform 0.2s ease-in-out;
+}
+
+.hover-effect-1::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 6px;
+    width: 100%;
+    transform: translateX(-105%);
+    transition: transform 0.3s ease-in-out;
+    @apply bg-primary-red;
+}
+
+.hover-effect-1:hover::before {
+    transform: translateX(0);
+}
+
+/* Hover Effect 2 */
+.hover-effect-2 {
+    position: relative;
+    display: inline-block;
+    padding: 0.5rem 0;
+}
+
+.hover-effect-2::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0%;
+    transition: width 0.5s ease-in-out;
+    @apply bg-primary-red
+}
+
+.hover-effect-2:hover::before {
+    width: 100%;
+}
+
+/* Hover Effect 3 */
+.hover-effect-3 {
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.hover-effect-3::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    transition: transform 0.3s ease-in-out;
+    height: 3px;
+    width: 100%;
+    @apply bg-primary-red;
+}
+
+.hover-effect-3:hover::before {
+    transform: translateX(-50%) scale(1);
+}
+
+/* Hover Effect 4 */
+.hover-effect-4 {
+    position: relative;
+    display: inline-block;
+}
+
+.hover-effect-4::before {
+    content: attr(data-hover);
+    fill: #4caf50 !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    transition: width 0.5s ease-in-out;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.hover-effect-4:hover::before {
+    width: 100%;
+}
+
+/* Hover Effect 7 */
+.hover-effect-7 {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+
+.hover-effect-7::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    transform: translateX(-105%);
+    transition: transform 0.3s ease-in-out;
+    @apply bg-primary-blue;
+}
+
+.hover-effect-7::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 3px;
+    width: 100%;
+    transform: translateX(105%);
+    transition: transform 0.3s ease-in-out;
+    @apply bg-primary-blue;
+}
+
+.hover-effect-7:hover::after,
+.hover-effect-7:hover::before {
+    transform: translateX(0);
+}

@@ -4,45 +4,45 @@ import logo from "@images/logo.svg";
 ---
 
 <footer
-    class="w-full flex flex-col text-white bg-primary-blue -z-20 relative overflow-hidden"
+  class="w-full flex flex-col text-white bg-primary-blue z-0 relative overflow-hidden"
 >
-    <div class="container flex justify-between w-full mx-auto py-16">
-        <div class="flex flex-col gap-4 w-80 justify-center">
-            <img class="max-w-64" src={logo.src} alt="Footer logo" />
-            <p>
-                Expertos en soluciones industriales, mineras y de construcción,
-                comprometidos con la calidad y la innovación
-            </p>
-        </div>
-        <div class="flex gap-14">
-            <div class="flex flex-col gap-2">
-                <p class="font-extrabold">Teléfonos:</p>
-                <p>+51 922 297 479</p>
-                <p>+51 968 028 591</p>
-            </div>
-            <div class="flex flex-col gap-8 w-72">
-                <div class="flex flex-col gap-2">
-                    <p class="font-extrabold">Correos:</p>
-                    <p>ventas@reypamin.pe</p>
-                    <p>administracion@reypamin.pe</p>
-                </div>
-                <div class="flex flex-col gap-2">
-                    <p class="font-extrabold">Dirección:</p>
-                    <p>
-                        Mz A Lote. 1 Av. Alameda de Copacabana 1ra Etapa Lima -
-                        Lima - Puente Piedra
-                    </p>
-                </div>
-            </div>
-        </div>
+  <div class="container flex justify-between w-full mx-auto py-16">
+    <div class="flex flex-col gap-4 w-80 justify-center">
+      <img class="max-w-64 fade-up" src={logo.src} alt="Footer logo" />
+      <p class="fade-up">
+        Expertos en soluciones industriales, mineras y de construcción,
+        comprometidos con la calidad y la innovación
+      </p>
     </div>
-    <div class="flex container flex-col mx-auto">
-        <hr class="w-full border-secondary-blue border border-opacity-50" />
-        <p class="py-4 text-center">© 2024 REYPAMIN E.I.R.L.</p>
+    <div class="flex gap-14 fade-up">
+      <div class="flex flex-col gap-2">
+        <p class="font-extrabold">Teléfonos:</p>
+        <p>+51 922 297 479</p>
+        <p>+51 968 028 591</p>
+      </div>
+      <div class="flex flex-col gap-8 w-72">
+        <div class="flex flex-col gap-2">
+          <p class="font-extrabold">Correos:</p>
+          <p>ventas@reypamin.pe</p>
+          <p>administracion@reypamin.pe</p>
+        </div>
+        <div class="flex flex-col gap-2">
+          <p class="font-extrabold">Dirección:</p>
+          <p>
+            Mz A Lote. 1 Av. Alameda de Copacabana 1ra Etapa Lima - Lima -
+            Puente Piedra
+          </p>
+        </div>
+      </div>
     </div>
-    <img
-        class="h-full self-center absolute -z-10"
-        src={bgFooter.src}
-        alt="Footer Image"
-    />
+  </div>
+  <div class="flex container flex-col mx-auto">
+    <hr class="w-full border-secondary-blue border border-opacity-50" />
+    <p class="py-4 text-center">© 2024 REYPAMIN E.I.R.L.</p>
+  </div>
+  <img
+    class="h-full self-center absolute -z-10"
+    src={bgFooter.src}
+    alt="Footer Image"
+  />
 </footer>
