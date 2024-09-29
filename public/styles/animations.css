@@ -128,3 +128,41 @@
 .hover-effect-7:hover::before {
     transform: translateX(0);
 }
+
+
+/* Hover Effect 11 */
+.hover-effect-11 {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    img {
+        transition: all 0.2s ease-in-out;
+    }
+}
+
+.hover-effect-11:hover {
+    transform: translateY(-100px);
+    transition: all 0.2s ease-in-out;
+    img {
+        transition: all 0.2s ease-in-out;
+        transform: scale(1.1);
+    }
+}
+
+
+.hover-effect-11::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 6px;
+    width: 100%;
+    transform: translateX(-105%);
+    transition: transform 0.3s ease-in-out;
+    @apply bg-primary-red;
+    z-index: 10;
+}
+
+.hover-effect-11:hover::before {
+    transform: translateX(0);
+}

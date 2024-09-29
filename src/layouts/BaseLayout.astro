@@ -1,6 +1,7 @@
 ---
 import Footer from 'src/common/Footer.astro';
 import 'animate.css';
+import ScrollUpButton from '@/common/ScrollUpButton.astro';
 
 interface Props {
   title: string;
@@ -24,5 +25,6 @@ const {title} = Astro.props
 	<body>
 		<slot />
 		<Footer />
+		<ScrollUpButton/>
 	</body>
 </html>

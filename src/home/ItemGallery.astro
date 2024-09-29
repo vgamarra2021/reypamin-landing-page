@@ -1,0 +1,68 @@
+---
+import PrimaryButton from "@/common/PrimaryButton.astro";
+
+interface Props {
+  imgSrc: string;
+  title: string;
+  description: string;
+  extraClass?: string[];
+}
+const { imgSrc, title, description, extraClass } = Astro.props;
+---
+
+<div
+  class:list={[
+    [
+      "item-gallery size-full fade-up overflow-hidden group cursor-pointer relative",
+    ],
+    extraClass,
+  ]}
+>
+  <img
+    class="size-full object-cover transition-all ease-in-out duration-300 group-hover:scale-110"
+    src={imgSrc}
+    alt="Imagen Galería 1"
+  />
+  <div
+    class="children-gallery hidden absolute h-full inset-0 flex-col items-center justify-center bg-black bg-opacity-60 z-30 fade-left gap-4 animate__animated"
+    style="animation-duration: .3s"
+  >
+    <h1 class="text-white text-center w-4/5 text-2xl font-extrabold">
+      {title}
+    </h1>
+    <p class="text-white text-center w-4/5 text-xl font-medium italic">
+      {description}
+    </p>
+    <PrimaryButton title="Más Info" />
+  </div>
+</div>
+<script>
+  const $galleryItems = document.querySelectorAll(".item-gallery");
+
+  $galleryItems.forEach((parent) => {
+    const item = parent.querySelector(".children-gallery");
+    if (item === null) return;
+    parent.addEventListener("mouseleave", () => {
+      item.classList.remove("animate__zoomIn");
+      item.classList.add("animate__rotateOutDownRight");
+
+      item.addEventListener(
+        "animationend",
+        (event: any) => {
+          if (event.animationName === "rotateOutDownRight") {
+            item.classList.remove("flex");
+            item.classList.add("hidden");
+          }
+        },
+        { once: true }
+      );
+    });
+
+    parent.addEventListener("mouseenter", () => {
+      item.classList.remove("hidden");
+      item.classList.add("flex");
+      item.classList.remove("animate__zoomOut");
+      item.classList.add("animate__zoomIn");
+    });
+  });
+</script>

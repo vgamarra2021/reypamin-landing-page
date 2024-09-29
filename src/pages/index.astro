@@ -7,6 +7,7 @@ import Gallery from "@/home/Gallery.astro";
 import ProductsAndSolutions from "@/home/ProductsAndSolutions.astro";
 import VideoSection from "@/home/VideoSection.astro";
 import Statistics from "@/home/Statistics.astro";
+import ScrollUpButton from "@/common/ScrollUpButton.astro";
 ---
 
 <BaseLayout title="Reypamin | Inicio">
@@ -19,7 +20,7 @@ import Statistics from "@/home/Statistics.astro";
   <VideoSection />
 </BaseLayout>
 <script>
-  import { addAnimation } from "@/functions/animations";
+  import { addAnimation } from "@/functions/animation";
   addAnimation(".fade-up");
   addAnimation(".fade-left", "animate__fadeInLeft");
   addAnimation(".fade-right", "animate__fadeInRight");
