@@ -1,7 +1,8 @@
 ---
 import PrimaryButton from "@/common/PrimaryButton.astro";
-import bgHero from "@images/bg-hero.webp";
-import heroVideo from "@videos/hero-video.mp4";
+import { heroItems } from "@/data/hero-items";
+import heroVideo2 from "@videos/hero-video.mp4";
+import heroVideo from "@videos/hero-video.webm";
 ---
 
 <div class="flex flex-col h-[100vh] max-h-[900px] w-full relative">
@@ -14,65 +15,181 @@ import heroVideo from "@videos/hero-video.mp4";
     loop
     playsinline
   >
-    <source src={heroVideo} type="video/mp4" />
+    <source src={heroVideo} type="video/webm" />
+    <source src={heroVideo2} type="video/mp4" />
     Tu navegador no soporta la etiqueta de video.
   </video>
-  <div
-    class="absolute pt-[110px] h-full inset-0 flex items-center justify-cente z-30 fade-left"
-  >
-    <div
-      class="container max-w-6xl mx-auto flex flex-col justify-start gap-6 text-white"
-    >
-      <h1
-        id="hero-title"
-        class="text-white text-6xl font-extrabold w-full max-w-2xl leading-tight fade-up delay-1000"
+  {
+    heroItems.map((item, index) => (
+      <div
+        id={"hero-container-" + (index + 1)}
+        class="absolute pt-[110px] h-full inset-0 items-center justify-center z-30 hidden"
       >
-        !Soluciones Especializadas para optimizar tus procesos industriales!
-      </h1>
-      <h2
-        class="text-xl w-full max-w-3xl text-pretty fade-up delay-1000 italic"
-      >
-        Impulsamos la eficiencia y la mejora continua con soluciones
-        tecnológicas avanzadas.
-      </h2>
+        <div class="container max-w-6xl mx-auto flex flex-col justify-start gap-6 text-white">
+          <h1
+            id={"hero-title-" + (index + 1)}
+            class="text-white text-6xl font-extrabold w-full max-w-2xl leading-tight hero-animation hero-title"
+          >
+            {item.title}
+          </h1>
+          <h2
+            id={"hero-subtitle-" + (index + 1)}
+            class="text-xl w-full max-w-3xl text-pretty italic hero-animation hero-subtitle"
+          >
+            {item.subtitle}
+          </h2>
 
-      <div class="flex fade-up delay-1000">
-        <PrimaryButton title="EXPLORAR SOLUCIONES" />
+          <div id={"hero-btn-" + (index + 1)} class="flex">
+            <PrimaryButton title="EXPLORAR SOLUCIONES" />
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+    ))
+  }
 </div>
 
 <script>
-  const video: any = document.getElementById("hero-video")!;
-  const $heroTitle = document.getElementById("hero-title")!;
-  const $loader = document.getElementById("loader")!;
+  import anime from "animejs/lib/anime.es.js";
+  import { heroItems } from "@/data/hero-items";
 
-  video.addEventListener("playing", () => {
+  const $video: any = document.getElementById("hero-video");
+  const $heroTitles: any = document.querySelectorAll(".hero-title");
+  const $heroSubtitles: any = document.querySelectorAll(".hero-subtitle");
+
+  const formatTitles = () => {
+    $heroTitles.forEach((title: HTMLElement) => {
+      title.innerHTML = title.textContent!.replace(
+        /\S/g,
+        '<span class="letter">$&</span>'
+      );
+    });
+    $heroSubtitles.forEach((subtitle: HTMLElement) => {
+      subtitle.innerHTML = subtitle.textContent!.replace(
+        /\S/g,
+        '<span class="letter">$&</span>'
+      );
+    });
+  };
+
+  formatTitles();
+
+  const timeline = anime.timeline({
+    autoplay: false,
+    easing: "easeInOutQuad",
+    duration: 20000,
+  });
+
+  const addAnimations = () => {
+    heroItems.forEach((item, index) => {
+      timeline
+        .add(
+          {
+            targets: [
+              "#hero-title-" + (index + 1) + " span",
+              "#hero-subtitle-" + (index + 1) + " span",
+              "#hero-btn-" + (index + 1),
+            ],
+            opacity: [0, 1],
+            duration: 600,
+            easing: "easeInOutSine",
+            delay: (elem, index) => index * 20,
+            begin: () => {
+              console.log("begin " + "#hero-container-" + (index + 1));
+              document
+                .querySelector("#hero-container-" + (index + 1))!
+                .classList.replace("hidden", "flex");
+            },
+          },
+          item.time
+        )
+        .add(
+          {
+            targets: [
+              "#hero-title-" + (index + 1) + " span",
+              "#hero-subtitle-" + (index + 1) + " span",
+              "#hero-btn-" + (index + 1),
+            ],
+            opacity: [1, 0],
+            duration: 600,
+            easing: "easeInOutSine",
+            complete: () => {
+              console.log("complete");
+              document
+                .querySelector("#hero-container-" + (index + 1))!
+                .classList.replace("flex", "hidden");
+            },
+          },
+          "+=3000"
+        );
+    });
+
+    // timeline
+    //   .add(
+    //     {
+    //       targets: ".hero-animation span",
+    //       opacity: [0, 1],
+    //       duration: 600, // Aparece el título
+    //       easing: "easeInOutSine",
+    //       delay: (elem, index) => index * 20,
+    //     },
+    //     500
+    //   )
+    //   .add(
+    //     {
+    //       targets: ".hero-animation span",
+    //       opacity: [1, 0],
+    //       duration: 300,
+    //       easing: "easeInOutSine",
+    //       begin: () => {
+    //         heroSubtitle.textContent =
+    //           "Transforma tu industria con nuestras soluciones.";
+    //         heroTitle.textContent =
+    //           "Transforma tu industria con nuestras soluciones.";
+    //         formatText(heroTitle);
+    //         formatText(heroSubtitle);
+    //       },
+    //     },
+    //     5000
+    //   )
+    //   .add({
+    //     targets: ".hero-animation span",
+    //     opacity: [0, 1],
+    //     duration: 600, // Aparece el título
+    //     easing: "easeInOutSine",
+    //     delay: (elem, index) => index * 20,
+    //     begin: () => {
+    //       console.log("begin");
+    //     },
+    //   });
+  };
+
+  addAnimations();
+
+  $video.addEventListener("playing", () => {
     console.log("El video ha comenzado a reproducirse.");
-    $heroTitle.innerHTML = "sadsad";
-    setTimeout(() => {
-      $heroTitle.innerHTML =
-        "!Soluciones Especializadas para optimizar tus procesos industriales!";
-    }, 3000);
-    // Aquí puedes lanzar cualquier evento o función que necesites
+    timeline.play();
   });
 
-  video.addEventListener("ended", () => {
+  $video.addEventListener("ended", () => {
     console.log("El video ha terminado y volverá a iniciar.");
-    video.play();
+    $video.play();
   });
 
-  video.addEventListener(
+  $video.addEventListener(
     "canplaythrough",
     () => {
+      const $loader: any = document.getElementById("loader");
       console.log("El video ha cargado completamente.");
       $loader.classList.add("animate__fadeOut");
-      $loader.addEventListener("animationend", (event) => {
-        if (event.animationName === "fadeOut") {
-          $loader.classList.replace("flex", "hidden");
-        }
-      }, { once: true });
+      $loader.addEventListener(
+        "animationend",
+        (event: { animationName: string }) => {
+          if (event.animationName === "fadeOut") {
+            $loader.classList.replace("flex", "hidden");
+          }
+        },
+        { once: true }
+      );
     },
     { once: true }
   );

@@ -17,6 +17,9 @@ importers:
       animate.css:
         specifier: ^4.1.1
         version: 4.1.1
+      animejs:
+        specifier: ^3.2.2
+        version: 3.2.2
       astro:
         specifier: ^4.15.8
         version: 4.15.8(rollup@4.22.2)(typescript@5.6.2)
@@ -27,6 +30,9 @@ importers:
         specifier: ^5.6.2
         version: 5.6.2
     devDependencies:
+      '@types/animejs':
+        specifier: ^3.1.12
+        version: 3.1.12
       prettier:
         specifier: ^3.3.3
         version: 3.3.3
@@ -591,6 +597,9 @@ packages:
   '@shikijs/vscode-textmate@9.2.2':
     resolution: {integrity: sha512-TMp15K+GGYrWlZM8+Lnj9EaHEFmOen0WJBrfa17hF7taDOYthuPPV0GWzfd/9iMij0akS/8Yw2ikquH7uVi/fg==}
 
+  '@types/animejs@3.1.12':
+    resolution: {integrity: sha512-fpdH+ZtlO0kqjTOqRaBdsEmvpRNOayI8k4EVkEtitL5l6wducDOXk0rgQgfZqWf/ZX9DzXrHf257S5i9xTcISQ==}
+
   '@types/babel__core@7.20.5':
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
 
@@ -669,6 +678,9 @@ packages:
 
   animate.css@4.1.1:
     resolution: {integrity: sha512-+mRmCTv6SbCmtYJCN4faJMNFVNN5EuCTTprDTAo7YzIGji2KADmakjVA3+8mVDkZ2Bf09vayB35lSQIex2+QaQ==}
+
+  animejs@3.2.2:
+    resolution: {integrity: sha512-Ao95qWLpDPXXM+WrmwcKbl6uNlC5tjnowlaRYtuVDHHoygjtIPfDUoK9NthrlZsQSKjZXlmji2TrBUAVbiH0LQ==}
 
   ansi-align@3.0.1:
     resolution: {integrity: sha512-IOfwwBF5iczOjp/WeY4YxyjqAFMQoZufdQWDd19SEExbVLNXqvpzSJ/M7Za4/sCPmQ0+GRquoA7bGcINcxew6w==}
@@ -2672,6 +2684,8 @@ snapshots:
 
   '@shikijs/vscode-textmate@9.2.2': {}
 
+  '@types/animejs@3.1.12': {}
+
   '@types/babel__core@7.20.5':
     dependencies:
       '@babel/parser': 7.25.6
@@ -2781,6 +2795,8 @@ snapshots:
       require-from-string: 2.0.2
 
   animate.css@4.1.1: {}
+
+  animejs@3.2.2: {}
 
   ansi-align@3.0.1:
     dependencies:
