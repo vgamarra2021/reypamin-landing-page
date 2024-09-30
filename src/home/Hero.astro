@@ -142,6 +142,7 @@ import heroVideo from "@videos/hero-video.webm";
   };
 
   $video.addEventListener("playing", () => {
+    addPreloaderEvent();
     console.log("El video ha comenzado a reproducirse.");
     timeline.play();
   });
