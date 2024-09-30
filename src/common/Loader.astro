@@ -1,6 +1,11 @@
+---
+import logo from '@images/logo.svg'
+---
+
 <div
   id="loader"
-  class="flex items-center justify-center size-full bg-primary-blue fixed z-[100] animate__animated"
+  class="flex flex-col gap-4 items-center justify-center size-full bg-primary-blue fixed z-[100] animate__animated"
 >
-  HOliiiii
+  <img class="absolute" width="250px" src={logo.src} alt="Preloader Logo">
+  <div class="loader"></div>
 </div>
