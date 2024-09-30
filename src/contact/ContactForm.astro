@@ -1,14 +1,68 @@
 ---
-import PrimaryButton from "src/common/PrimaryButton.astro";
 import Input from "./Input.astro";
+import PrimaryContactButton from "./PrimaryContactButton.astro";
 import TextArea from "./TextArea.astro";
 ---
 
-
-<form class="flex flex-col gap-4 w-full max-w-screen-sm self-end">
-    <Input id="name" inputName="name" label="Nombres"></Input>
-    <Input id="email" inputName="email" label="Correo"></Input>
-    <Input id="phone" inputName="phone" label="Teléfono"></Input>
-    <TextArea id="message" inputName="message" label="Mensaje"></TextArea>
-    <PrimaryButton title="ENVIAR"></PrimaryButton>
+<form
+  id="contact-form"
+  class="flex flex-col gap-4 w-full max-w-screen-sm self-end"
+>
+  <Input id="name" inputName="name" label="Nombres" />
+  <Input id="email" inputName="email" label="Correo" />
+  <Input id="phone" inputName="phone" label="Teléfono" />
+  <TextArea id="message" inputName="message" label="Mensaje" />
+  <PrimaryContactButton title="ENVIAR" />
 </form>
+
+<script>
+  document
+    .getElementById("contact-form")
+    ?.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const form = event.target as HTMLFormElement;
+
+      if (!form.checkValidity()) {
+        alert("Please fill out all required fields.");
+        return;
+      }
+
+      const formData = new FormData(form); // Obtiene los datos del formulario
+
+      // Accede a los valores por el atributo 'name' del input
+      const name = formData.get("name");
+      const email = formData.get("email");
+      const phone = formData.get("phone");
+      const message = formData.get("message");
+
+      console.log(formData);
+
+      try {
+        const response = await fetch("/api/sendEmail.json", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            from: "VENTAS REYPAMIN <ventas@reypamin.pe>",
+            to: [
+              "victorgamarra1@gmail.com",
+            ],
+            subject: "CLIENTE POTENCIAL WEB!",
+            text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`,
+          }),
+        });
+
+        if (response.ok) {
+          alert("Form submitted successfully!");
+          form.reset();
+        } else {
+          alert("Error submitting form. Please try again.");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        alert("Error submitting form. Please try again.");
+      }
+    });
+</script>

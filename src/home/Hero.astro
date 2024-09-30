@@ -122,48 +122,24 @@ import heroVideo from "@videos/hero-video.webm";
           "+=3000"
         );
     });
-
-    // timeline
-    //   .add(
-    //     {
-    //       targets: ".hero-animation span",
-    //       opacity: [0, 1],
-    //       duration: 600, // Aparece el título
-    //       easing: "easeInOutSine",
-    //       delay: (elem, index) => index * 20,
-    //     },
-    //     500
-    //   )
-    //   .add(
-    //     {
-    //       targets: ".hero-animation span",
-    //       opacity: [1, 0],
-    //       duration: 300,
-    //       easing: "easeInOutSine",
-    //       begin: () => {
-    //         heroSubtitle.textContent =
-    //           "Transforma tu industria con nuestras soluciones.";
-    //         heroTitle.textContent =
-    //           "Transforma tu industria con nuestras soluciones.";
-    //         formatText(heroTitle);
-    //         formatText(heroSubtitle);
-    //       },
-    //     },
-    //     5000
-    //   )
-    //   .add({
-    //     targets: ".hero-animation span",
-    //     opacity: [0, 1],
-    //     duration: 600, // Aparece el título
-    //     easing: "easeInOutSine",
-    //     delay: (elem, index) => index * 20,
-    //     begin: () => {
-    //       console.log("begin");
-    //     },
-    //   });
   };
 
   addAnimations();
+
+  const addPreloaderEvent = () => {
+    const $loader: any = document.getElementById("loader");
+    console.log("El video ha cargado completamente.");
+    $loader.classList.add("animate__fadeOut");
+    $loader.addEventListener(
+      "animationend",
+      (event: { animationName: string }) => {
+        if (event.animationName === "fadeOut") {
+          $loader.classList.replace("flex", "hidden");
+        }
+      },
+      { once: true }
+    );
+  };
 
   $video.addEventListener("playing", () => {
     console.log("El video ha comenzado a reproducirse.");
@@ -178,18 +154,7 @@ import heroVideo from "@videos/hero-video.webm";
   $video.addEventListener(
     "canplaythrough",
     () => {
-      const $loader: any = document.getElementById("loader");
-      console.log("El video ha cargado completamente.");
-      $loader.classList.add("animate__fadeOut");
-      $loader.addEventListener(
-        "animationend",
-        (event: { animationName: string }) => {
-          if (event.animationName === "fadeOut") {
-            $loader.classList.replace("flex", "hidden");
-          }
-        },
-        { once: true }
-      );
+      addPreloaderEvent();
     },
     { once: true }
   );
