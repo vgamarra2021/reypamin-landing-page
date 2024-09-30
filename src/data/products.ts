@@ -1,3 +1,4 @@
+import type { IProduct } from '@/model/product.interface';
 const products: IProduct[] = [
   {
     title: "Especialistas en Transmisión y Control de Potencia",

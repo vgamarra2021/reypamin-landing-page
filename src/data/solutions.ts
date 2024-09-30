@@ -1,4 +1,4 @@
-import { ISolution } from '@/model/solution.interface';
+import type { ISolution } from '@/model/solution.interface';
 const solutions: ISolution[] = [
   {
     title: "Reparación General de Cilindros Hidráulicos",

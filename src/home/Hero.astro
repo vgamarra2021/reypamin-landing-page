@@ -24,6 +24,7 @@ import heroVideo from "@videos/hero-video.mp4";
       class="container max-w-6xl mx-auto flex flex-col justify-start gap-6 text-white"
     >
       <h1
+        id="hero-title"
         class="text-white text-6xl font-extrabold w-full max-w-2xl leading-tight fade-up delay-1000"
       >
         !Soluciones Especializadas para optimizar tus procesos industriales!
@@ -44,19 +45,35 @@ import heroVideo from "@videos/hero-video.mp4";
 
 <script>
   const video: any = document.getElementById("hero-video")!;
-  const loader = document.getElementById("loader")!;
+  const $heroTitle = document.getElementById("hero-title")!;
+  const $loader = document.getElementById("loader")!;
 
   video.addEventListener("playing", () => {
     console.log("El video ha comenzado a reproducirse.");
+    $heroTitle.innerHTML = "sadsad";
+    setTimeout(() => {
+      $heroTitle.innerHTML =
+        "!Soluciones Especializadas para optimizar tus procesos industriales!";
+    }, 3000);
     // Aquí puedes lanzar cualquier evento o función que necesites
   });
 
   video.addEventListener("ended", () => {
     console.log("El video ha terminado y volverá a iniciar.");
-    video.play(); // Esto asegura que el video empiece otra vez si no lo hace automáticamente.
+    video.play();
   });
 
-  video.addEventListener("canplaythrough", () => {
-    console.log("El video ha cargado completamente.");
-  },{once: true});
+  video.addEventListener(
+    "canplaythrough",
+    () => {
+      console.log("El video ha cargado completamente.");
+      $loader.classList.add("animate__fadeOut");
+      $loader.addEventListener("animationend", (event) => {
+        if (event.animationName === "fadeOut") {
+          $loader.classList.replace("flex", "hidden");
+        }
+      }, { once: true });
+    },
+    { once: true }
+  );
 </script>

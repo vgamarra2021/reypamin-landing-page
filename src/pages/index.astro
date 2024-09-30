@@ -8,9 +8,11 @@ import ProductsAndSolutions from "@/home/ProductsAndSolutions.astro";
 import VideoSection from "@/home/VideoSection.astro";
 import Statistics from "@/home/Statistics.astro";
 import ScrollUpButton from "@/common/ScrollUpButton.astro";
+import Loader from "@/common/Loader.astro";
 ---
 
 <BaseLayout title="Reypamin | Inicio">
+  <Loader/>
   <Header currentPage="inicio" />
   <Hero />
   <ProductsAndSolutions />
