@@ -39,9 +39,9 @@ import heroVideo from "@videos/hero-video.webm";
             {item.subtitle}
           </h2>
 
-          <div id={"hero-btn-" + (index + 1)} class="flex">
-            <PrimaryButton title="EXPLORAR SOLUCIONES" />
-          </div>
+          <a id={"hero-btn-" + (index + 1)} class="flex" href={item.href}>
+            <PrimaryButton title={item.btnText} />
+          </a>
         </div>
       </div>
     ))

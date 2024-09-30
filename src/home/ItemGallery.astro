@@ -6,8 +6,9 @@ interface Props {
   title: string;
   description: string;
   extraClass?: string[];
+  href: string;
 }
-const { imgSrc, title, description, extraClass } = Astro.props;
+const { imgSrc, title, description, extraClass, href } = Astro.props;
 ---
 
 <div
@@ -33,7 +34,9 @@ const { imgSrc, title, description, extraClass } = Astro.props;
     <p class="text-white text-center w-4/5 text-xl font-medium italic">
       {description}
     </p>
-    <PrimaryButton title="Más Info" />
+    <a href={href}>
+      <PrimaryButton title="Más Info" />
+    </a>
   </div>
 </div>
 <script>
