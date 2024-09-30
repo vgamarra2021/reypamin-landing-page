@@ -1,0 +1,62 @@
+---
+import PrimaryButton from "@/common/PrimaryButton.astro";
+import bgHero from "@images/bg-hero.webp";
+import heroVideo from "@videos/hero-video.mp4";
+---
+
+<div class="flex flex-col h-[100vh] max-h-[900px] w-full relative">
+  <!-- <img class="size-full object-cover" src={bgHero.src} alt="Hero Section" /> -->
+  <video
+    id="hero-video"
+    class="absolute inset-0 w-full h-full object-cover"
+    autoplay
+    muted
+    loop
+    playsinline
+  >
+    <source src={heroVideo} type="video/mp4" />
+    Tu navegador no soporta la etiqueta de video.
+  </video>
+  <div
+    class="absolute pt-[110px] h-full inset-0 flex items-center justify-cente z-30 fade-left"
+  >
+    <div
+      class="container max-w-6xl mx-auto flex flex-col justify-start gap-6 text-white"
+    >
+      <h1
+        class="text-white text-6xl font-extrabold w-full max-w-2xl leading-tight fade-up delay-1000"
+      >
+        !Soluciones Especializadas para optimizar tus procesos industriales!
+      </h1>
+      <h2
+        class="text-xl w-full max-w-3xl text-pretty fade-up delay-1000 italic"
+      >
+        Impulsamos la eficiencia y la mejora continua con soluciones
+        tecnológicas avanzadas.
+      </h2>
+
+      <div class="flex fade-up delay-1000">
+        <PrimaryButton title="EXPLORAR SOLUCIONES" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const video: any = document.getElementById("hero-video")!;
+  const loader = document.getElementById("loader")!;
+
+  video.addEventListener("playing", () => {
+    console.log("El video ha comenzado a reproducirse.");
+    // Aquí puedes lanzar cualquier evento o función que necesites
+  });
+
+  video.addEventListener("ended", () => {
+    console.log("El video ha terminado y volverá a iniciar.");
+    video.play(); // Esto asegura que el video empiece otra vez si no lo hace automáticamente.
+  });
+
+  video.addEventListener("canplaythrough", () => {
+    console.log("El video ha cargado completamente.");
+  },{once: true});
+</script>
