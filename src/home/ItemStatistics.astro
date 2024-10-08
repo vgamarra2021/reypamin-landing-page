@@ -7,7 +7,7 @@ interface Props {
 const { title, description } = Astro.props;
 ---
 
-<div class="flex flex-col justify-center items-center text-white w-fit gap-2 fade-up">
-  <h4 class="font-extrabold text-8xl drop-shadow-md">{title}</h4>
-  <p class="w-full max-w-[240px] text-center font-bold italic text-2xl drop-shadow-md">{description}</p>
+<div class="flex flex-col justify-center items-center text-white w-fit gap-2">
+  <h4 class="font-extrabold text-8xl drop-shadow-md fade-in-letters">{title}</h4>
+  <p class="w-full max-w-[240px] text-center font-bold italic text-2xl drop-shadow-md fade-in-letters">{description}</p>
 </div>

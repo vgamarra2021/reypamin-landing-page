@@ -11,7 +11,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Reypamin | Inicio">
-  <Loader/>
+  <Loader />
   <Header currentPage="inicio" />
   <Hero />
   <ProductsAndSolutions />
@@ -21,8 +21,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <VideoSection />
 </BaseLayout>
 <script>
-  import { addAnimation } from "@/functions/animation";
+  import {
+    addFadeInLettersAnimation,
+    addAnimation,
+  } from "@/functions/animation";
   addAnimation(".fade-up");
   addAnimation(".fade-left", "animate__fadeInLeft");
   addAnimation(".fade-right", "animate__fadeInRight");
+  addFadeInLettersAnimation(".fade-in-letters");
 </script>

@@ -21,7 +21,9 @@ import SocialNetwork from "src/contact/SocialNetwork.astro";
       <div
         class="absolute pt-[110px] h-full inset-0 flex items-center justify-center bg-black bg-opacity-70 z-30 fade-left"
       >
-        <h1 class="text-white text-4xl font-extrabold">Contacto</h1>
+        <h1 class="text-white text-4xl font-extrabold fade-in-letters">
+          Contacto
+        </h1>
       </div>
     </div>
 
@@ -29,17 +31,21 @@ import SocialNetwork from "src/contact/SocialNetwork.astro";
       <section
         class="flex container items-center flex-col inset-0 mx-auto relative z-10 pt-20 fade-up"
       >
-        <h2 class="text-5xl italic font-black text-primary-blue">
+        <h2
+          class="text-5xl italic font-black text-primary-blue fade-in-letters"
+        >
           ¡Hablemos de tu Próximo Proyecto!
         </h2>
-        <p class="text-2xl font-medium italic">Queremos ser parte de tu éxito</p>
+        <p class="text-2xl font-medium italic fade-in-letters">
+          Queremos ser parte de tu éxito
+        </p>
       </section>
       <section
-        class="flex container mx-auto w-full z-10 gap-10 items-center justify-center "
+        class="flex container mx-auto w-full z-10 gap-10 items-center justify-center"
       >
         <div class="flex flex-col gap-6 fade-left">
           <h2
-            class="text-2xl italic font-black text-primary-blue max-w-screen-sm self-end"
+            class="text-2xl italic font-black text-primary-blue max-w-screen-sm self-end fade-in-letters"
           >
             Completa el formulario y nuestros especialistas se pondrán en
             contacto contigo
@@ -53,7 +59,11 @@ import SocialNetwork from "src/contact/SocialNetwork.astro";
             <div
               class="overflow-hidden rounded-md h-[600px] aspect-[4/6] relative border-white border-8 z-10 group-hover:border-4 group-hover:border-primary-blue transition-all ease-in-out duration-300 cursor-pointer"
             >
-              <img class="size-full group-hover:scale-110 transition-all ease-in-out duration-300" src={image1.src} alt="Contact Image 1" />
+              <img
+                class="size-full group-hover:scale-110 transition-all ease-in-out duration-300"
+                src={image1.src}
+                alt="Contact Image 1"
+              />
             </div>
             <div
               class="rounded-md bg-primary-blue h-[600px] relative aspect-[4/6] z-0 -mt-[580px] ms-[20px]"
@@ -65,7 +75,9 @@ import SocialNetwork from "src/contact/SocialNetwork.astro";
       <section
         class="flex container items-center flex-col inset-0 mx-auto relative z-10 gap-8"
       >
-        <h2 class="text-4xl italic font-black text-primary-blue fade-up">
+        <h2
+          class="text-4xl italic font-black text-primary-blue fade-in-letters"
+        >
           Estamos Aquí para Atenderte
         </h2>
         <div class="flex gap-6 container justify-center fade-up">
@@ -165,12 +177,14 @@ import SocialNetwork from "src/contact/SocialNetwork.astro";
         </div>
       </section>
       <section
-        class="flex flex-col gap-8 items-center container mx-auto w-full z-10 justify-center pb-20 fade-up"
+        class="flex flex-col gap-8 items-center container mx-auto w-full z-10 justify-center pb-20"
       >
-        <h2 class="text-4xl italic font-black text-primary-blue">
+        <h2
+          class="text-4xl italic font-black text-primary-blue fade-in-letters"
+        >
           Síguenos En:
         </h2>
-        <div class="flex gap-10">
+        <div class="flex gap-10 fade-up">
           <SocialNetwork href="https://www.facebook.com/reypamin">
             <svg
               class="h-12"
@@ -218,8 +232,12 @@ import SocialNetwork from "src/contact/SocialNetwork.astro";
   </div>
 </BaseLayout>
 <script>
-  import { addAnimation } from "@/functions/animation";
+  import {
+    addAnimation,
+    addFadeInLettersAnimation,
+  } from "@/functions/animation";
   addAnimation(".fade-up");
   addAnimation(".fade-left", "animate__fadeInLeft");
   addAnimation(".fade-right", "animate__fadeInRight");
+  addFadeInLettersAnimation(".fade-in-letters");
 </script>

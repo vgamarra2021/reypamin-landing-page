@@ -18,12 +18,12 @@ const indexFormatted = index < 9 ? `0${index + 1}` : index + 1;
       { "flex-row-reverse": product.position === "right" },
     ]}
   >
-    <div class="flex flex-col gap-8 w-full max-w-md fade-up justify-center">
-      <h4 class="text-primary-red font-black text-xl">{indexFormatted}</h4>
-      <h3 class="text-primary-blue font-black text-3xl italic">
+    <div class="flex flex-col gap-8 w-full max-w-md justify-center">
+      <h4 class="text-primary-red font-black text-xl fade-in-letters">{indexFormatted}</h4>
+      <h3 class="text-primary-blue font-black text-3xl italic fade-in-letters">
         {product.title}
       </h3>
-      <p class="text-primary-blue text-xl font-medium">{product.description}</p>
+      <p class="text-primary-blue text-xl font-medium fade-in-letters">{product.description}</p>
       {
         product.features.length != 0 && (
           <ul class="flex flex-col text-primary-blue gap-3">
@@ -53,7 +53,7 @@ const indexFormatted = index < 9 ? `0${index + 1}` : index + 1;
                   </defs>
                 </svg>
 
-                <p class="italic -mt-1">{feature}</p>
+                <p class="italic -mt-1 fade-in-letters">{feature}</p>
               </li>
             ))}
           </ul>

@@ -37,8 +37,9 @@ import BaseLayout from "src/layouts/BaseLayout.astro";
   </div>
 </BaseLayout>
 <script>
-  import { addAnimation } from "@/functions/animation";
+  import { addAnimation, addFadeInLettersAnimation } from "@/functions/animation";
   addAnimation(".fade-up");
   addAnimation(".fade-left", "animate__fadeInLeft");
   addAnimation(".fade-right", "animate__fadeInRight");
+  addFadeInLettersAnimation(".fade-in-letters")
 </script>

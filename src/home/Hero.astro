@@ -4,7 +4,7 @@ import { heroItems } from "@/data/hero-items";
 import heroVideo from "@videos/hero-video.webm";
 ---
 
-<div class="flex flex-col h-[100vh] max-h-[900px] w-full relative">
+<div class="flex flex-col h-[100vh] w-full relative">
   <!-- <img class="size-full object-cover" src={bgHero.src} alt="Hero Section" /> -->
   <video
     id="hero-video"
@@ -49,27 +49,14 @@ import heroVideo from "@videos/hero-video.webm";
 <script>
   import anime from "animejs/lib/anime.es.js";
   import { heroItems } from "@/data/hero-items";
+import { formatTitles } from "@/functions/animation";
 
   const $video: any = document.getElementById("hero-video");
   const $heroTitles: any = document.querySelectorAll(".hero-title");
   const $heroSubtitles: any = document.querySelectorAll(".hero-subtitle");
-
-  const formatTitles = () => {
-    $heroTitles.forEach((title: HTMLElement) => {
-      title.innerHTML = title.textContent!.replace(
-        /\S/g,
-        '<span class="letter">$&</span>'
-      );
-    });
-    $heroSubtitles.forEach((subtitle: HTMLElement) => {
-      subtitle.innerHTML = subtitle.textContent!.replace(
-        /\S/g,
-        '<span class="letter">$&</span>'
-      );
-    });
-  };
-
-  formatTitles();
+  
+  formatTitles($heroTitles);
+  formatTitles($heroSubtitles);
 
   const timeline = anime.timeline({
     autoplay: false,
