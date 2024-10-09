@@ -134,7 +134,7 @@ import heroVideo from "@videos/hero-video-4.webm";
 
   addAnimations();
 
-  const addPreloaderEvent = () => {
+  const hidePreloader = () => {
     const $loader: any = document.getElementById("loader");
     console.log("El video ha cargado completamente.");
     $loader.classList.add("animate__fadeOut");
@@ -149,22 +149,30 @@ import heroVideo from "@videos/hero-video-4.webm";
     );
   };
 
-  $video.addEventListener("playing", () => {
-    addPreloaderEvent();
-    console.log("El video ha comenzado a reproducirse.");
-    timeline.play();
-  });
+  document.addEventListener("DOMContentLoaded", () => {
+    console.log('contenido cargado')
+    hidePreloader();
+    $video.addEventListener(
+      "canplaythrough",
+      () => {
+        console.log("El video está listo para reproducirse.");
+        hidePreloader();
+      },
+      { once: true }
+    );
 
-  $video.addEventListener("ended", () => {
-    console.log("El video ha terminado y volverá a iniciar.");
-    $video.play();
-  });
+    $video.addEventListener(
+      "playing",
+      () => {
+        hidePreloader();
+        console.log("El video ha comenzado a reproducirse.");
+        timeline.play();
+      }
+    );
 
-  $video.addEventListener(
-    "canplaythrough",
-    () => {
-      addPreloaderEvent();
-    },
-    { once: true }
-  );
+    $video.addEventListener("ended", () => {
+      console.log("El video ha terminado y volverá a iniciar.");
+      $video.play();
+    });
+  });
 </script>

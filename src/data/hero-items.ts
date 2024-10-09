@@ -9,17 +9,17 @@ export const heroItems = [
     href: "/soluciones",
   },
   {
-    title: "¡Diseños a la medida!",
-    subtitle: "Fabricamos piezas metálicas adaptadas a tus necesidades.",
+    title: "¡Piezas a Medida para un Rendimiento Superior!",
+    subtitle: "Diseñamos y Fabricamos componentes a medida que garantizan el máximo rendimiento de tu equipo.",
     time: 4500,
     btnText: "EXPLORAR PRODUCTOS",
     href: "/productos",
   },
   {
-    title: "¡Innovación en cada paso!",
-    subtitle: "Transforma tu industria con nuestras soluciones.",
+    title: "¡Descubre cómo Potenciar tu Industria!",
+    subtitle: "Estamos aquí para ayudarte a encontrar la solución perfecta para tu negocio.",
     time: 8500,
-    btnText: "EXPLORAR SOLUCIONES",
-    href: "/soluciones",
+    btnText: "CONTÁCTANOS",
+    href: "/contacto",
   },
 ];
