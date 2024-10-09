@@ -50,14 +50,7 @@ export function addFadeInLettersAnimation(selector: string) {
   });
 }
 
-export function formatTitle(element: HTMLElement) {
-  element.innerHTML = element.textContent!.replace(
-    /\S/g,
-    '<span class="letter">$&</span>'
-  );
-}
-
-export function formatTitles(element: HTMLElement[]) {
+export function formatTitles(element: any) {
   element.forEach((title: HTMLElement) => {
     title.innerHTML = title.textContent!.replace(
       /\S/g,

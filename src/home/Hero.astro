@@ -4,7 +4,9 @@ import { heroItems } from "@/data/hero-items";
 import heroVideo from "@videos/hero-video-short.webm";
 ---
 
-<div class="flex flex-col h-[100vh] max-h-[400px] sm:max-h-[800px] lg:max-h-[none] w-full relative">
+<div
+  class="flex flex-col h-[100vh] max-h-[400px] sm:max-h-[800px] lg:max-h-[none] w-full relative"
+>
   <video
     id="hero-video"
     class="absolute inset-0 w-full h-full object-cover"
@@ -36,7 +38,11 @@ import heroVideo from "@videos/hero-video-short.webm";
             {item.subtitle}
           </h2>
 
-          <a id={"hero-btn-" + (index + 1)} class="flex drop-shadow-md mt-2 md:mt-0" href={item.href}>
+          <a
+            id={"hero-btn-" + (index + 1)}
+            class="flex drop-shadow-md mt-2 md:mt-0"
+            href={item.href}
+          >
             <PrimaryButton title={item.btnText} />
           </a>
         </div>
@@ -46,14 +52,14 @@ import heroVideo from "@videos/hero-video-short.webm";
 </div>
 
 <script>
-  import anime from "animejs/lib/anime.es.js";
   import { heroItems } from "@/data/hero-items";
-import { formatTitles } from "@/functions/animation";
+  import { formatTitles } from "@/functions/animation";
+  import anime from "animejs/lib/anime.es.js";
 
   const $video: any = document.getElementById("hero-video");
   const $heroTitles: any = document.querySelectorAll(".hero-title");
   const $heroSubtitles: any = document.querySelectorAll(".hero-subtitle");
-  
+
   formatTitles($heroTitles);
   formatTitles($heroSubtitles);
 
@@ -75,7 +81,7 @@ import { formatTitles } from "@/functions/animation";
             opacity: [0, 1],
             duration: 800,
             easing: "easeInOutSine",
-            delay: (elem, index) => index * 10,
+            delay: (el, index) => index * 10,
             begin: () => {
               console.log("begin " + "#hero-container-" + (index + 1));
               document
@@ -94,7 +100,7 @@ import { formatTitles } from "@/functions/animation";
             opacity: [0, 1],
             duration: 800,
             easing: "easeInOutSine",
-            delay: (elem, index) => index * 10,
+            delay: (el, index) => index * 10,
             begin: () => {
               console.log("begin " + "#hero-container-" + (index + 1));
               document
