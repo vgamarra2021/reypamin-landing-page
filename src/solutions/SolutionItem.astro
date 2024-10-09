@@ -18,7 +18,7 @@ const indexFormatted = index < 9 ? `0${index + 1}` : index + 1;
       { "md:flex-row-reverse": solution.position === "right" },
     ]}
   >
-    <div class="flex flex-col gap-8 w-full max-w-md justify-center text-center items-center md:text-start md:items-start">
+    <div class="flex flex-col gap-8 w-full max-w-md justify-center text-center items-center md:text-start md:items-start px-5 sm:px-0">
       <h4 class="text-primary-red font-black text-xl fade-in-letters">{indexFormatted}</h4>
       <h3 class="text-primary-blue font-black text-3xl italic fade-in-letters">
         {solution.title}
@@ -76,7 +76,7 @@ const indexFormatted = index < 9 ? `0${index + 1}` : index + 1;
             <div
               class:list={[
                 [
-                  "overflow-hidden rounded-md w-[400px] relative border-white border-8 z-10 group-hover:border-4 group-hover:border-primary-blue transition-all ease-in-out duration-300 cursor-pointer",
+                  "overflow-hidden rounded-md w-[300px] sm:w-[400px] relative border-white border-8 z-10 group-hover:border-4 group-hover:border-primary-blue transition-all ease-in-out duration-300 cursor-pointer",
                 ],
                 { "aspect-[4/6]": solution.images.length === 1 },
                 { "aspect-[6/4]": solution.images.length != 1 },
@@ -90,11 +90,11 @@ const indexFormatted = index < 9 ? `0${index + 1}` : index + 1;
             </div>
             <div
               class:list={[
-                ["rounded-md bg-primary-blue w-[400px] relative z-0 ms-[15px]"],
+                ["rounded-md bg-primary-blue w-[300px] sm:w-[400px] relative z-0 ms-[15px]"],
                 { "aspect-[4/6]": solution.images.length === 1 },
                 { "aspect-[6/4]": solution.images.length != 1 },
                 { "-mt-[580px]": solution.images.length === 1 },
-                { "-mt-[250px]": solution.images.length != 1 },
+                { "sm:-mt-[250px] -mt-[185px]": solution.images.length != 1 },
               ]}
             />
           </div>
