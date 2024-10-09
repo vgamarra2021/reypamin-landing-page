@@ -11,14 +11,14 @@ export const heroItems = [
   {
     title: "¡Innovación en cada paso!",
     subtitle: "Transforma tu industria con nuestras soluciones.",
-    time: 5000,
+    time: 4500,
     btnText: "EXPLORAR SOLUCIONES",
     href: "/soluciones",
   },
   {
     title: "¡Diseños a la medida!",
     subtitle: "Fabricamos piezas metálicas adaptadas a tus necesidades.",
-    time: 10000,
+    time: 8500,
     btnText: "EXPLORAR PRODUCTOS",
     href: "/productos",
   },

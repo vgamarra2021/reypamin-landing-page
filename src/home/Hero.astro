@@ -1,7 +1,7 @@
 ---
 import PrimaryButton from "@/common/PrimaryButton.astro";
 import { heroItems } from "@/data/hero-items";
-import heroVideo from "@videos/hero-video-short.webm";
+import heroVideo from "@videos/hero-video-4.webm";
 ---
 
 <div
@@ -66,7 +66,7 @@ import heroVideo from "@videos/hero-video-short.webm";
   const timeline = anime.timeline({
     autoplay: false,
     easing: "easeInOutQuad",
-    duration: 16000,
+    duration: 14190,
   });
 
   const addAnimations = () => {
@@ -127,7 +127,7 @@ import heroVideo from "@videos/hero-video-short.webm";
                 .classList.replace("flex", "hidden");
             },
           },
-          "+=3000"
+          "+=2000"
         );
     });
   };
