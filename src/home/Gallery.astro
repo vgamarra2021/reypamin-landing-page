@@ -36,7 +36,7 @@ import ItemGallery from "./ItemGallery.astro";
       </p>
     </div>
     <div
-      class="containter w-full mx-auto grid grid-cols-4 grid-rows-[450px,280px] gap-6"
+      class="container w-full mx-auto grid grid-cols-1 sm:grid-col-2 xl:grid-cols-4 grid-rows-[450px] sm:grid-rows-[450px,450px,450px] xl:grid-rows-[450px,280px] gap-6"
     >
       <ItemGallery
         href="/soluciones"
@@ -69,17 +69,25 @@ import ItemGallery from "./ItemGallery.astro";
         title="Servicio de Soldadura"
       />
       <ItemGallery
+        href="/soluciones"
+        description='Scooptram, Empernadores, Desatadores, Perforadoras, entre otros.'
+        imgSrc={imgGallery7.src}
+        title="Reparación integral de Cucharas de Cargadores Frontales"
+        extraClass={["flex xl:hidden"]}
+      />
+      <ItemGallery
         href="/productos"
         description="Expertos en Fabricación y Reparación de cilindros hidráulicos y neumáticos para maquinaria de movimiento de tierra e industria, con insumos certificados y conforme a las especificaciones y estándares originales del fabricante."
         imgSrc={imgGallery6.src}
         title="¡Reparación y Fabricación a Medida!"
-        extraClass={["col-span-2"]}
+        extraClass={["sm:col-span-2"]}
       />
       <ItemGallery
         href="/soluciones"
         description='Scooptram, Empernadores, Desatadores, Perforadoras, entre otros.'
         imgSrc={imgGallery7.src}
         title="Reparación integral de Cucharas de Cargadores Frontales"
+        extraClass={["hidden xl:flex"]}
       />
     </div>
   </div>

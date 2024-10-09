@@ -27,9 +27,9 @@ import SocialNetwork from "src/contact/SocialNetwork.astro";
       </div>
     </div>
 
-    <div class="w-full flex flex-col mx-auto relative h-fit gap-20">
+    <div class="w-full flex flex-col mx-auto relative h-fit gap-10 md:gap-20 ">
       <section
-        class="flex container items-center flex-col inset-0 mx-auto relative z-10 pt-20 fade-up"
+        class="flex container items-center flex-col inset-0 mx-auto relative z-10 pt-20 text-center md:text-start fade-up"
       >
         <h2
           class="text-5xl italic font-black text-primary-blue fade-in-letters"
@@ -41,11 +41,11 @@ import SocialNetwork from "src/contact/SocialNetwork.astro";
         </p>
       </section>
       <section
-        class="flex container mx-auto w-full z-10 gap-10 items-center justify-center"
+        class="flex md:flex-row flex-col container mx-auto w-full z-10 gap-10 items-center justify-center"
       >
         <div class="flex flex-col gap-6 fade-left">
           <h2
-            class="text-2xl italic font-black text-primary-blue max-w-screen-sm self-end fade-in-letters"
+            class="text-2xl text-center md:text-start italic font-black text-primary-blue max-w-screen-sm self-end fade-in-letters"
           >
             Completa el formulario y nuestros especialistas se pondrán en
             contacto contigo
@@ -80,7 +80,7 @@ import SocialNetwork from "src/contact/SocialNetwork.astro";
         >
           Estamos Aquí para Atenderte
         </h2>
-        <div class="flex gap-6 container justify-center fade-up">
+        <div class="flex flex-col items-center md:flex-row gap-6 container justify-center fade-up">
           <ContactItem
             title="Llámanos"
             items={["+51 922 297 479", "+51 968 028 591"]}
