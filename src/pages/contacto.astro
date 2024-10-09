@@ -27,7 +27,7 @@ import SocialNetwork from "src/contact/SocialNetwork.astro";
       </div>
     </div>
 
-    <div class="w-full flex flex-col mx-auto relative h-fit gap-10 md:gap-20 ">
+    <div class="w-full flex flex-col mx-auto relative h-fit gap-10 md:gap-20">
       <section
         class="flex container items-center flex-col inset-0 mx-auto relative z-10 pt-20 text-center md:text-start fade-up"
       >
@@ -80,11 +80,10 @@ import SocialNetwork from "src/contact/SocialNetwork.astro";
         >
           Estamos Aquí para Atenderte
         </h2>
-        <div class="flex flex-col items-center md:flex-row gap-6 container justify-center fade-up">
-          <ContactItem
-            title="Llámanos"
-            items={["+51 922 297 479", "+51 968 028 591"]}
-          >
+        <div
+          class="flex flex-col items-center md:flex-row gap-6 container justify-center fade-up"
+        >
+          <ContactItem title="Llámanos" items={["+51 968 028 591"]}>
             <svg
               class="size-20"
               viewBox="0 0 90 90"
