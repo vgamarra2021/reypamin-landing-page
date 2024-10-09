@@ -37,7 +37,11 @@ import heroVideo from "@videos/hero-video.webm";
             {item.subtitle}
           </h2>
 
-          <a id={"hero-btn-" + (index + 1)} class="flex drop-shadow-md" href={item.href}>
+          <a
+            id={"hero-btn-" + (index + 1)}
+            class="flex drop-shadow-md"
+            href={item.href}
+          >
             <PrimaryButton title={item.btnText} />
           </a>
         </div>
@@ -49,12 +53,12 @@ import heroVideo from "@videos/hero-video.webm";
 <script>
   import anime from "animejs/lib/anime.es.js";
   import { heroItems } from "@/data/hero-items";
-import { formatTitles } from "@/functions/animation";
+  import { formatTitles } from "@/functions/animation";
 
   const $video: any = document.getElementById("hero-video");
   const $heroTitles: any = document.querySelectorAll(".hero-title");
   const $heroSubtitles: any = document.querySelectorAll(".hero-subtitle");
-  
+
   formatTitles($heroTitles);
   formatTitles($heroSubtitles);
 
