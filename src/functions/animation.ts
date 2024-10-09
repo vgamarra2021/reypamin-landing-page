@@ -25,11 +25,11 @@ export function addFadeInLettersAnimation(selector: string) {
       const $letters = text.querySelectorAll("span");
       let previousBottom = 0;
       let auxIndex = 0;
-      $letters.forEach((span, index) => {
+      $letters.forEach((span) => {
         const rect = span.getBoundingClientRect();
         if (rect.top > previousBottom) auxIndex = 0;
         previousBottom = rect.bottom;
-        span.style.animationDelay = `${auxIndex * 20}ms`;
+        span.style.animationDelay = `${auxIndex * 15}ms`;
         auxIndex++;
       });
     });

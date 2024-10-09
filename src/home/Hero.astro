@@ -1,7 +1,7 @@
 ---
 import PrimaryButton from "@/common/PrimaryButton.astro";
 import { heroItems } from "@/data/hero-items";
-import heroVideo from "@videos/hero-video.webm";
+import heroVideo from "@videos/hero-video-short.webm";
 ---
 
 <div class="flex flex-col h-[100vh] w-full relative">
@@ -37,11 +37,7 @@ import heroVideo from "@videos/hero-video.webm";
             {item.subtitle}
           </h2>
 
-          <a
-            id={"hero-btn-" + (index + 1)}
-            class="flex drop-shadow-md"
-            href={item.href}
-          >
+          <a id={"hero-btn-" + (index + 1)} class="flex drop-shadow-md" href={item.href}>
             <PrimaryButton title={item.btnText} />
           </a>
         </div>
@@ -53,19 +49,19 @@ import heroVideo from "@videos/hero-video.webm";
 <script>
   import anime from "animejs/lib/anime.es.js";
   import { heroItems } from "@/data/hero-items";
-  import { formatTitles } from "@/functions/animation";
+import { formatTitles } from "@/functions/animation";
 
   const $video: any = document.getElementById("hero-video");
   const $heroTitles: any = document.querySelectorAll(".hero-title");
   const $heroSubtitles: any = document.querySelectorAll(".hero-subtitle");
-
+  
   formatTitles($heroTitles);
   formatTitles($heroSubtitles);
 
   const timeline = anime.timeline({
     autoplay: false,
     easing: "easeInOutQuad",
-    duration: 20000,
+    duration: 16000,
   });
 
   const addAnimations = () => {
@@ -75,13 +71,31 @@ import heroVideo from "@videos/hero-video.webm";
           {
             targets: [
               "#hero-title-" + (index + 1) + " span",
+              "#hero-btn-" + (index + 1),
+            ],
+            opacity: [0, 1],
+            duration: 800,
+            easing: "easeInOutSine",
+            delay: (elem, index) => index * 10,
+            begin: () => {
+              console.log("begin " + "#hero-container-" + (index + 1));
+              document
+                .querySelector("#hero-container-" + (index + 1))!
+                .classList.replace("hidden", "flex");
+            },
+          },
+          item.time
+        )
+        .add(
+          {
+            targets: [
               "#hero-subtitle-" + (index + 1) + " span",
               "#hero-btn-" + (index + 1),
             ],
             opacity: [0, 1],
-            duration: 600,
+            duration: 800,
             easing: "easeInOutSine",
-            delay: (elem, index) => index * 20,
+            delay: (elem, index) => index * 10,
             begin: () => {
               console.log("begin " + "#hero-container-" + (index + 1));
               document
