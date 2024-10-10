@@ -83,45 +83,6 @@ import SocialNetwork from "src/contact/SocialNetwork.astro";
         <div
           class="flex flex-col items-center md:flex-row gap-6 container justify-center fade-up"
         >
-          <ContactItem title="Llámanos" items={["+51 968 028 591"]}>
-            <svg
-              class="size-20"
-              viewBox="0 0 90 90"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M56.25 26.25C58.2391 26.25 60.1468 27.0402 61.5533 28.4467C62.9598 29.8532 63.75 31.7609 63.75 33.75M56.25 11.25C62.2174 11.25 67.9403 13.6205 72.1599 17.8401C76.3795 22.0597 78.75 27.7826 78.75 33.75M18.75 15H33.75L41.25 33.75L31.875 39.375C35.8911 47.5182 42.4818 54.1089 50.625 58.125L56.25 48.75L75 56.25V71.25C75 73.2391 74.2098 75.1468 72.8033 76.5533C71.3968 77.9598 69.4891 78.75 67.5 78.75C52.8722 77.8611 39.0756 71.6494 28.7131 61.2869C18.3506 50.9244 12.1389 37.1278 11.25 22.5C11.25 20.5109 12.0402 18.6032 13.4467 17.1967C14.8532 15.7902 16.7609 15 18.75 15Z"
-                stroke="white"
-                stroke-width="5.33333"
-                stroke-linecap="round"
-                stroke-linejoin="round"></path>
-            </svg>
-          </ContactItem>
-          <ContactItem
-            title="Escríbenos"
-            items={["ventas@reypamin.pe", "administracion@reypamin.pe"]}
-          >
-            <svg
-              class="size-20"
-              viewBox="0 0 90 90"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M11.25 26.25C11.25 24.2609 12.0402 22.3532 13.4467 20.9467C14.8532 19.5402 16.7609 18.75 18.75 18.75H71.25C73.2391 18.75 75.1468 19.5402 76.5533 20.9467C77.9598 22.3532 78.75 24.2609 78.75 26.25V63.75C78.75 65.7391 77.9598 67.6468 76.5533 69.0533C75.1468 70.4598 73.2391 71.25 71.25 71.25H18.75C16.7609 71.25 14.8532 70.4598 13.4467 69.0533C12.0402 67.6468 11.25 65.7391 11.25 63.75V26.25Z"
-                stroke="white"
-                stroke-width="5.33333"
-                stroke-linecap="round"
-                stroke-linejoin="round"></path>
-              <path
-                d="M11.25 26.25L45 48.75L78.75 26.25"
-                stroke="white"
-                stroke-width="5.33333"
-                stroke-linecap="round"
-                stroke-linejoin="round"></path>
-            </svg>
-          </ContactItem>
           <ContactItem
             title="Ubícanos"
             items={[
@@ -171,6 +132,45 @@ import SocialNetwork from "src/contact/SocialNetwork.astro";
                   <rect width="90" height="90" fill="white"></rect>
                 </clipPath>
               </defs>
+            </svg>
+          </ContactItem>
+          <ContactItem title="Llámanos" items={["+51 968 028 591"]}>
+            <svg
+              class="size-20"
+              viewBox="0 0 90 90"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M56.25 26.25C58.2391 26.25 60.1468 27.0402 61.5533 28.4467C62.9598 29.8532 63.75 31.7609 63.75 33.75M56.25 11.25C62.2174 11.25 67.9403 13.6205 72.1599 17.8401C76.3795 22.0597 78.75 27.7826 78.75 33.75M18.75 15H33.75L41.25 33.75L31.875 39.375C35.8911 47.5182 42.4818 54.1089 50.625 58.125L56.25 48.75L75 56.25V71.25C75 73.2391 74.2098 75.1468 72.8033 76.5533C71.3968 77.9598 69.4891 78.75 67.5 78.75C52.8722 77.8611 39.0756 71.6494 28.7131 61.2869C18.3506 50.9244 12.1389 37.1278 11.25 22.5C11.25 20.5109 12.0402 18.6032 13.4467 17.1967C14.8532 15.7902 16.7609 15 18.75 15Z"
+                stroke="white"
+                stroke-width="5.33333"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </ContactItem>
+          <ContactItem
+            title="Escríbenos"
+            items={["ventas@reypamin.pe", "administracion@reypamin.pe"]}
+          >
+            <svg
+              class="size-20"
+              viewBox="0 0 90 90"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M11.25 26.25C11.25 24.2609 12.0402 22.3532 13.4467 20.9467C14.8532 19.5402 16.7609 18.75 18.75 18.75H71.25C73.2391 18.75 75.1468 19.5402 76.5533 20.9467C77.9598 22.3532 78.75 24.2609 78.75 26.25V63.75C78.75 65.7391 77.9598 67.6468 76.5533 69.0533C75.1468 70.4598 73.2391 71.25 71.25 71.25H18.75C16.7609 71.25 14.8532 70.4598 13.4467 69.0533C12.0402 67.6468 11.25 65.7391 11.25 63.75V26.25Z"
+                stroke="white"
+                stroke-width="5.33333"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M11.25 26.25L45 48.75L78.75 26.25"
+                stroke="white"
+                stroke-width="5.33333"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
             </svg>
           </ContactItem>
         </div>
