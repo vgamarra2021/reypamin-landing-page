@@ -1,6 +1,7 @@
-import type { ISolution } from '@/model/solution.interface';
+import type { ISolution } from "@/model/solution.interface";
 const solutions: ISolution[] = [
   {
+    id: "cilindros-hidraulicos",
     title: "Reparación General de Cilindros Hidráulicos",
     description:
       "Ofrecemos una gama completa de servicios para el mantenimiento y reparación de cilindros hidráulicos.",
@@ -14,11 +15,12 @@ const solutions: ISolution[] = [
       "Suministro de Repuestos",
       "Pruebas de Funcionamiento",
     ],
-    href: "/solution-1",
+    href: "https://api.whatsapp.com/send?phone=51968028591&text=Buen%20d%C3%ADa!%2C%20me%20encuentro%20interesado%20en%20Reparaci%C3%B3n%20General%20de%20Cilindros%20Hidr%C3%A1ulicos.",
     images: ["solution-01-1", "solution-01-2"],
     position: "left",
   },
   {
+    id: "reparacion-cucharas",
     title: "Reparación General de Cucharas para Equipos Pesados",
     description:
       "Nuestros servicios de reparación de cucharas están diseñados para restaurar la funcionalidad y robustez de tus equipos pesados, asegurando una operación eficiente y segura.",
@@ -33,11 +35,12 @@ const solutions: ISolution[] = [
       "Cambio de Pines y Bocinas",
       "Cambio de Cuchillas",
     ],
-    href: "/solution-1",
+    href: "https://api.whatsapp.com/send?phone=51968028591&text=Buen%20d%C3%ADa!%2C%20me%20encuentro%20interesado%20en%20Reparaci%C3%B3n%20General%20de%20Cucharas%20para%20Equipos%20Pesados.",
     images: ["solution-02-1", "solution-02-2", "solution-02-3"],
     position: "right",
   },
   {
+    id: "mecanizado-piezas-metalicas",
     title: "Mecanizado de piezas Metálicas",
     description:
       "Brindamos soluciones de piezas metálicas especiales, fabricación en alta calidad para diversas aplicaciones industriales, garantizando precisión y durabilidad en cada proyecto.",
@@ -48,11 +51,12 @@ const solutions: ISolution[] = [
       "Fabricación y Reconstrucción de Componentes Mecánicos",
       "Diseño a Medida",
     ],
-    href: "/solution-1",
+    href: "https://api.whatsapp.com/send?phone=51968028591&text=Buen%20d%C3%ADa!%2C%20me%20encuentro%20interesado%20en%20Mecanizado%20de%20piezas%20Met%C3%A1licas.",
     images: ["solution-03-1", "solution-03-2"],
     position: "left",
   },
   {
+    id: "mantenimiento-reparaciones",
     title: "Mantenimiento y Reparaciones",
     description:
       "Ofrecemos un servicio integral de mantenimiento y reparacion en sistemas de equipos para Minería Subterránea y plantas concentradoras",
@@ -71,11 +75,12 @@ const solutions: ISolution[] = [
       "Sistemas Eléctricos, Hidráulicos y Neumáticos",
       "Mantenimiento y Reparación de motores Eléctricos",
     ],
-    href: "/solution-1",
+    href: "https://api.whatsapp.com/send?phone=51968028591&text=Buen%20d%C3%ADa!%2C%20me%20encuentro%20interesado%20en%20Mantenimiento%20y%20Reparaciones.",
     images: ["solution-04-1", "solution-04-2", "solution-04-3"],
     position: "right",
   },
   {
+    id: "fabricacion-reparacion-soldadura",
     title:
       "Fabricación y Reparación de componentes con soldadura Metalmecánica",
     description:
@@ -85,11 +90,12 @@ const solutions: ISolution[] = [
       "Fabricación de componentes para equipos mineros",
       "Fabricación y Reconstrucción de componentes mecánicos con soldadura",
     ],
-    href: "/solution-1",
+    href: "https://api.whatsapp.com/send?phone=51968028591&text=Buen%20d%C3%ADa!%2C%20me%20encuentro%20interesado%20en%20Fabricaci%C3%B3n%20y%20Reparaci%C3%B3n%20de%20componentes%20con%20soldadura%20Metalmec%C3%A1nica.",
     images: ["solution-05-1", "solution-05-2"],
     position: "left",
   },
   {
+    id: "fabricacion-mantenimiento-tanques-acero",
     title: "Fabricación y Mantenimiento de Tanques de Acero",
     description:
       "Especialistas en la fabricación y mantenimiento de tanques de acero, garantizando su durabilidad y funcionalidad en todas las aplicaciones.",
@@ -104,7 +110,7 @@ const solutions: ISolution[] = [
       "Verificación de Juntas",
       "Certificación",
     ],
-    href: "/solution-1",
+    href: "https://api.whatsapp.com/send?phone=51968028591&text=Buen%20d%C3%ADa!%2C%20me%20encuentro%20interesado%20en%20Fabricaci%C3%B3n%20y%20Mantenimiento%20de%20Tanques%20de%20Acero.",
     images: ["solution-06-1", "solution-06-2"],
     position: "right",
   },
