@@ -28,9 +28,8 @@ import TextArea from "./TextArea.astro";
         return;
       }
 
-      const formData = new FormData(form); // Obtiene los datos del formulario
+      const formData = new FormData(form);
 
-      // Accede a los valores por el atributo 'name' del input
       const name = formData.get("name");
       const email = formData.get("email");
       const phone = formData.get("phone");
@@ -45,12 +44,14 @@ import TextArea from "./TextArea.astro";
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            from: "VENTAS REYPAMIN <ventas@reypamin.pe>",
+            from: "CLIENTE POTENCIAL WEB REYPAMIN <ventas@reypamin.pe>",
             to: [
+              "ventas@reypamin.pe",
+              "c.castillo@reypamin.pe",
               "victorgamarra1@gmail.com",
             ],
             subject: "CLIENTE POTENCIAL WEB!",
-            text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`,
+            text: `Nombre: ${name}\nEmail: ${email}\tTeléfono: ${phone}\nMensaje: ${message}`,
           }),
         });
 
