@@ -51,19 +51,19 @@ import TextArea from "./TextArea.astro";
               "victorgamarra1@gmail.com",
             ],
             subject: "CLIENTE POTENCIAL WEB!",
-            text: `Nombre: ${name}\nEmail: ${email}\tTeléfono: ${phone}\nMensaje: ${message}`,
+            text: `Nombre: ${name}\nEmail: ${email}\nTeléfono: ${phone}\nMensaje: ${message}`,
           }),
         });
 
         if (response.ok) {
-          alert("Form submitted successfully!");
+          alert("¡Formulario enviado exitosamente!");
           form.reset();
         } else {
-          alert("Error submitting form. Please try again.");
+          alert("Error al enviar el formulario. Por favor, intenta de nuevo.");
         }
       } catch (error) {
         console.error("Error:", error);
-        alert("Error submitting form. Please try again.");
+        alert("Error al enviar el formulario. Por favor, intenta de nuevo.");
       }
     });
 </script>
