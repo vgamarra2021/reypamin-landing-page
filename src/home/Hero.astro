@@ -1,7 +1,8 @@
 ---
 import PrimaryButton from "@/common/PrimaryButton.astro";
 import { heroItems } from "@/data/hero-items";
-import heroVideo from "@videos/hero-video-4.webm";
+import heroVideo from "@videos/hero-video-6.webm";
+import heroVideoMp4 from "@videos/hero-video-mp4.mp4";
 ---
 
 <div
@@ -16,6 +17,7 @@ import heroVideo from "@videos/hero-video-4.webm";
     playsinline
   >
     <source src={heroVideo} type="video/webm" />
+    <source src={heroVideoMp4} type="video/mp4" />
     Tu navegador no soporta la etiqueta de video.
   </video>
   {
