@@ -18,7 +18,7 @@ const products: IProduct[] = [
       "Poleas Tambor",
       "Back Stop",
     ],
-    href: "https://api.whatsapp.com/send?phone=51968028591&text=Buen%20d%C3%ADa!%2C%20me%20encuentro%20interesado%20en%20Especialistas%20en%20Transmisi%C3%B3n%20y%20Control%20de%20Potencia.",
+    href: "https://api.whatsapp.com/send?phone=51939891053&text=Buen%20d%C3%ADa!%2C%20me%20encuentro%20interesado%20en%20Especialistas%20en%20Transmisi%C3%B3n%20y%20Control%20de%20Potencia.",
     images: ["product-01-1", "product-01-2"],
     position: "left",
   },
@@ -28,7 +28,7 @@ const products: IProduct[] = [
     description:
       "Diseñamos y fabricamos tableros eléctricos a medida, adaptados a las necesidades específicas de cada proyecto industrial.",
     features: [],
-    href: "https://api.whatsapp.com/send?phone=51968028591&text=Buen%20d%C3%ADa!%2C%20me%20encuentro%20interesado%20en%20Fabricaci%C3%B3n%20de%20Tableros%20El%C3%A9ctricos.",
+    href: "https://api.whatsapp.com/send?phone=51939891053&text=Buen%20d%C3%ADa!%2C%20me%20encuentro%20interesado%20en%20Fabricaci%C3%B3n%20de%20Tableros%20El%C3%A9ctricos.",
     images: ["product-02-1", "product-02-2"],
     position: "right",
   },
@@ -38,7 +38,7 @@ const products: IProduct[] = [
     description:
       "Ofrecemos un amplio catálogo de repuestos eléctricos para asegurar la continuidad operativa de tus equipos, con piezas de alta calidad y disponibilidad inmediata.",
     features: [],
-    href: "https://api.whatsapp.com/send?phone=51968028591&text=Buen%20d%C3%ADa!%2C%20me%20encuentro%20interesado%20en%20Repuestos%20El%C3%A9ctricos.",
+    href: "https://api.whatsapp.com/send?phone=51939891053&text=Buen%20d%C3%ADa!%2C%20me%20encuentro%20interesado%20en%20Repuestos%20El%C3%A9ctricos.",
     images: ["product-03-1", "product-03-2"],
     position: "left",
   },
@@ -48,7 +48,7 @@ const products: IProduct[] = [
     description:
       "Alternadores y arrancadores para equipos de maquinaria movil, diseñados para garantizar un funcionamiento confiable y continuo.",
     features: [],
-    href: "https://api.whatsapp.com/send?phone=51968028591&text=Buen%20d%C3%ADa!%2C%20me%20encuentro%20interesado%20en%20Alternadores%20y%20Arrancadores.",
+    href: "https://api.whatsapp.com/send?phone=51939891053&text=Buen%20d%C3%ADa!%2C%20me%20encuentro%20interesado%20en%20Alternadores%20y%20Arrancadores.",
     images: ["product-04-1", "product-04-2"],
     position: "right",
   },
@@ -58,7 +58,7 @@ const products: IProduct[] = [
     description:
       "Bombas y Motores hidráulicas diseñadas para cumplir con las más exigentes procesos de calidad. Aplicada a maquinarias pesadas industriales.",
     features: [],
-    href: "https://api.whatsapp.com/send?phone=51968028591&text=Buen%20d%C3%ADa!%2C%20me%20encuentro%20interesado%20en%20Bombas%20y%20Motores%20Hidr%C3%A1ulicos.",
+    href: "https://api.whatsapp.com/send?phone=51939891053&text=Buen%20d%C3%ADa!%2C%20me%20encuentro%20interesado%20en%20Bombas%20y%20Motores%20Hidr%C3%A1ulicos.",
     images: ["product-05-1", "product-05-2"],
     position: "left",
   },
@@ -68,7 +68,7 @@ const products: IProduct[] = [
     description:
       "Proveemos asientos ergonómicos y duraderos para maquinaria pesada y liviana, brindando comodidad y seguridad a los operadores.",
     features: [],
-    href: "https://api.whatsapp.com/send?phone=51968028591&text=Buen%20d%C3%ADa!%2C%20me%20encuentro%20interesado%20en%20Asientos%20para%20Maquinaria%20Pesada%20y%20Liviana.",
+    href: "https://api.whatsapp.com/send?phone=51939891053&text=Buen%20d%C3%ADa!%2C%20me%20encuentro%20interesado%20en%20Asientos%20para%20Maquinaria%20Pesada%20y%20Liviana.",
     images: ["product-06"],
     position: "right",
   },
@@ -78,7 +78,7 @@ const products: IProduct[] = [
     description:
       "Contamos con consumibles de torno de alta precisión y durabilidad, esenciales para el buen funcionamiento de tus maquinarias de torneado.",
     features: [],
-    href: "https://api.whatsapp.com/send?phone=51968028591&text=Buen%20d%C3%ADa!%2C%20me%20encuentro%20interesado%20en%20Consumibles%20de%20Torno.",
+    href: "https://api.whatsapp.com/send?phone=51939891053&text=Buen%20d%C3%ADa!%2C%20me%20encuentro%20interesado%20en%20Consumibles%20de%20Torno.",
     images: ["product-07-1", "product-07-2"],
     position: "left",
   },
@@ -88,7 +88,7 @@ const products: IProduct[] = [
     description:
       "Proveemos sellos hidráulicos y neumáticos de alta resistencia para garantizar la estanqueidad en sistemas de alta presión.",
     features: [],
-    href: "https://api.whatsapp.com/send?phone=51968028591&text=Buen%20d%C3%ADa!%2C%20me%20encuentro%20interesado%20en%20O-Ring%2C%20Sellos%20Hidr%C3%A1ulicos%20y%20Neum%C3%A1ticos.",
+    href: "https://api.whatsapp.com/send?phone=51939891053&text=Buen%20d%C3%ADa!%2C%20me%20encuentro%20interesado%20en%20O-Ring%2C%20Sellos%20Hidr%C3%A1ulicos%20y%20Neum%C3%A1ticos.",
     images: ["product-08-1", "product-08-2"],
     position: "right",
   },
